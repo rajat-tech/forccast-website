@@ -1,0 +1,23 @@
+{
+  "name": "forccast-website",
+  "version": "0.0.1",
+  "description": "Forccast website",
+  "main": "build.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calibro/forccast-website.git"
+  },
+  "keywords": [
+    "forccast"
+  ],
+  "author": "Calibro",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/calibro/forccast-website/issues"
+  },
+  "homepage": "https://github.com/calibro/forccast-website#readme"
+}
