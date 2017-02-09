@@ -1,0 +1,10 @@
+{% extends "default.html" %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+     <ul>
+       {% for file in pagination.files %}
+       <li>{{ file.path }}</li>
+     {% endfor %}
+     </ul>
+{% endblock %}

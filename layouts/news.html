@@ -1,0 +1,12 @@
+{% extends "default.html" %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+    <p>{{ date }}</p><!-- todo: format/pretty print date -->
+    {{ contents | safe }}
+     <ul>
+       {% for category in categories %}
+       <li>{{ category }}</li>
+     {% endfor %}
+     </ul>
+{% endblock %}

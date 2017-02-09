@@ -1,0 +1,13 @@
+{% extends "default.html" %}
+
+{% block body %}
+  <h1>{{ title }}</h1>
+  {{ contents | safe }}
+  <ul>
+    {% for project in external %}
+      <li>
+        {{ project.project_title }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "default.html" %}
+
+{% block body %}
+  <h1>{{ title }}</h1>
+  {{ contents | safe }}
+  <ul>
+    {% for partner in external %}
+      <li>
+        {{ partner.name }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "default.html" %}
+
+{% block body %}
+  <h1>{{ title }}</h1>
+  {{ contents | safe }}
+  <ul>
+    {% for person in external %}
+      <li>
+        {{ person.firstname }} {{ person.lastname }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

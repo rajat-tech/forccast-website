@@ -1,0 +1,30 @@
+{
+  "fromjsontocollection":[
+    {
+      "source_file": "data/news_fr",
+      "meta":{
+        "layout": "news.html",
+        "collection": "news",
+        "locale": "fr"
+      },
+      "defaults":{
+        "contents": "description",
+        "title": "title",
+        "date": "pubdate"
+      }
+    },
+    {
+      "source_file": "data/news_en",
+      "meta":{
+        "layout": "news.html",
+        "collection": "news",
+        "locale": "en"
+      },
+      "defaults":{
+        "contents": "description",
+        "title": "title",
+        "date": "pubdate"
+      }
+    }
+  ]
+}
