@@ -9,10 +9,34 @@ var metalsmith = require('metalsmith'),
     i18n = require('metalsmith-i18n'),
     dataloader = require('metalsmith-data-loader'),
     pagination = require('metalsmith-pagination'),
+    assets = require('metalsmith-assets'),
     fromjsontocollection = require('./fromjsontocollection.js'),
-    nunjucks = require('nunjucks');
+    nunjucks = require('nunjucks'),
+    dateFilter = require('nunjucks-date-filter');
 
-nunjucks.configure('layouts', {watch: false,  noCache: true})
+var env = nunjucks.configure('layouts', {watch: false,  noCache: true})
+env.addFilter('date',dateFilter);
+env.addFilter('limitTo', function(input, limit) {
+  if (typeof limit !== 'number') {
+    return input;
+  }
+  if (typeof input === 'string') {
+    if (limit >= 0) {
+      return input.substring(0, limit);
+    } else {
+      return input.substr(limit);
+    }
+  }
+  if (Array.isArray(input)) {
+    limit = Math.min(limit, input.length);
+    if (limit >= 0) {
+      return input.splice(0, limit);
+    } else {
+      return input.splice(input.length + limit, input.length);
+    }
+  }
+  return input;
+});
 
 metalsmith(__dirname)
   .metadata({
@@ -20,6 +44,7 @@ metalsmith(__dirname)
       name: 'Forccast',
       baseurl: 'https://www.forccast.fr',
       author: 'Forccast team',
+      description: 'Formation par la cartographie des controverses à l\'analyse des sciences et des techniques'
     }
   })
   .source('./src')
@@ -51,7 +76,7 @@ metalsmith(__dirname)
       first: 'fr/news/index.html',
       path: 'fr/news/:num/index.html',
       pageMetadata: {
-        title: 'Archive'
+        title: 'Latest news'
       }
     },
     'collections.news_en': {
@@ -60,7 +85,7 @@ metalsmith(__dirname)
       first: 'en/news/index.html',
       path: 'en/news/:num/index.html',
       pageMetadata: {
-        title: 'Archive'
+        title: 'Latest news'
       }
     }
   }))
@@ -93,6 +118,10 @@ metalsmith(__dirname)
     pattern: '**/*.html',
     directory: 'layouts'
   }))
+  .use(assets({
+    source: './bower_components', // relative to the working directory
+    destination: './assets' // relative to the build directory
+  }))
   .use(serve({
     port: 8081,
     verbose: true
@@ -108,6 +137,7 @@ metalsmith(__dirname)
       console.log(err);
     }
     else {
+      console.log(files)
       console.log('Forccast built!');
     }
   });

@@ -1,0 +1,24 @@
+{
+  "name": "forccast-website",
+  "description": "Forccast website",
+  "main": "build.js",
+  "authors": [
+    "Calibro"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "forccast"
+  ],
+  "homepage": "https://github.com/calibro/forccast-website",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

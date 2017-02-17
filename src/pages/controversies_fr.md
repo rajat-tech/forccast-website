@@ -1,6 +1,7 @@
 ---
 title: "controversies"
-layout: controversies.html
+level: 0
+layout: page.html
 ---
 
 Les controverses

@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'hk_grotesk';
+    src: url('fonts/hkgrotesk-bold-webfont.woff2') format('woff2'),
+         url('fonts/hkgrotesk-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hk_grotesk';
+    src: url('fonts/hkgrotesk-bolditalic-webfont.woff2') format('woff2'),
+         url('fonts/hkgrotesk-bolditalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'hk_grotesk';
+    src: url('fonts/hkgrotesk-italic-webfont.woff2') format('woff2'),
+         url('fonts/hkgrotesk-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'hk_grotesk';
+    src: url('fonts/hkgrotesk-light-webfont.woff2') format('woff2'),
+         url('fonts/hkgrotesk-light-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hk_grotesk';
+    src: url('fonts/hkgrotesk-lightitalic-webfont.woff2') format('woff2'),
+         url('fonts/hkgrotesk-lightitalic-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'hk_grotesk';
+    src: url('fonts/hkgrotesk-regular-webfont.woff2') format('woff2'),
+         url('fonts/hkgrotesk-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hk_grotesk';
+    src: url('fonts/hkgrotesk-semibold-webfont.woff2') format('woff2'),
+         url('fonts/hkgrotesk-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hk_grotesk';
+    src: url('fonts/hkgrotesk-semibolditalic-webfont.woff2') format('woff2'),
+         url('fonts/hkgrotesk-semibolditalic-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+body{
+  font-family: 'hk_grotesk', Arial, sans-serif;
+  padding-top: 70px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Titillium Web', Arial, sans-serif;
+}
+
+.container{
+  margin-left: 0px;
+}
+
+.hamburger{
+  float: left;
+  margin-right: 0px;
+  margin-left: 15px;
+  position: relative;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.sidebar-mobile-container{
+  width: calc(100% - 10%);
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+  min-height: calc(100vh - 50px);
+  transform: translate(-100%);
+  transition: transform 0.5s;
+}
+
+.sidebar-mobile-container.collapse{
+  transform: translate(0);
+}
+
+.latest-news{
+  display: inline-block;
+}
+
+.latest-news-btn-group,
+.archive-news-btn-group{
+  margin-top: 20px;
+}
+
+.last-news-container{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  white-space: normal;
+  overflow-x: auto;
+}
+
+.last-news{
+  width: 100%;
+  padding: 0px;
+  white-space: normal;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+/* news archive page */
+
+.news-img{
+  flex: 0 0 100%;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #ccc;
+}
+
+.news-info > .news-category{
+  margin-top: auto;
+}
+
+.img-order-0{
+  order: 0;
+}
+
+.img-order-1{
+  order: 0;
+}
+
+/* utilities */
+
+.flex{
+  display: flex;
+  display: -webkit-flex;
+}
+
+.flex-column{
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+
+  .hamburger{
+    margin-right: 15px;
+    margin-left: 0px;
+  }
+
+  .last-news-container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+
+  .last-news{
+    width: 50%;
+    padding: 15px;
+    white-space: normal;
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+  }
+
+  .news-img{
+    flex: 0 0 130px;
+  }
+
+  .flex-wrap{
+    flex-wrap: nowrap;
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  body{
+    padding-top: 0px;
+  }
+
+  .last-news{
+    width: 30%;
+  }
+
+  .img-order-1{
+    order: 1;
+  }
+
+}

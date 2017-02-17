@@ -1,10 +1,55 @@
 {% extends "default.html" %}
-
 {% block body %}
-    <h1>{{ title }}</h1>
-     <ul>
-       {% for file in pagination.files %}
-       <li>{{ file.path }}</li>
-     {% endfor %}
-     </ul>
+  {% include "partials/nav-mobile.html" %}
+  {% include "partials/sidebar-mobile.html" %}
+  <div class="container">
+    <div class="row">
+      {% include "partials/sidebar.html" %}
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="latest-news hidden-xs hidden-sm">{{ title }}</h2>
+            <div class="btn-group pull-right archive-news-btn-group" role="group" aria-label="slide news">
+              <a type="button" class="btn btn-default {{ '' if pagination.previous else 'disabled' }}" href="/{{ pagination.previous.path if pagination.previous }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+              <a type="button" class="btn btn-default {{ '' if pagination.next else 'disabled' }}" href="/{{ pagination.next.path if pagination.next }}"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+            </div>
+          </div>
+        </div>
+          {% set order = cycler("img-order-0", "img-order-1") %}
+          {% for row in pagination.files | slice(5) %}
+            {% set roworder = order.next() %}
+            <div class="row">
+              {% for news in row%}
+              <div class="col-sm-12 col-md-6 flex flex-wrap">
+                  <div
+                    style="background-image: url('{{news.cover}}')"
+                    class="news-img {{roworder}}">
+
+                  </div>
+                  <div class="news-info flex flex-column">
+                    <p class="news-date">
+                      {{ news.date | date("DD MMM YYYY") }}
+                    </p>
+                    <a href="/{{ news.path }}">
+                      <h4>{{ news.title }}</h4>
+                    </a>
+                    <p class="news-category">
+                      {{ news.categories | join(' · ')}}
+                    </p>
+                  </div>
+              </div>
+            {% endfor %}
+            </div>
+          {% endfor %}
+          <div class="row">
+            <div class="col-md-12">
+              <div class="btn-group pull-right archive-news-btn-group" role="group" aria-label="slide news">
+                <a type="button" class="btn btn-default {{ '' if pagination.previous else 'disabled' }}" href="/{{ pagination.previous.path if pagination.previous }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+                <a type="button" class="btn btn-default {{ '' if pagination.next else 'disabled' }}" href="/{{ pagination.next.path if pagination.next }}"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

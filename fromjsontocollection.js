@@ -36,6 +36,7 @@ function plugin(options){
                 link: d.link,
                 categories: d.categories,
                 media: d.media,
+                cover: d.cover,
                 author: d.author
               }
               var meta     = collection.meta;

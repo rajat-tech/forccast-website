@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>{{ title }}</title>
-
-    <!-- CSS -->
-    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
-    <link rel="stylesheet" href="{{ site.base_url }}css/style.css">    -->
+    {% include "partials/head.html" %}
   </head>
   <body>
-    {% include "partials/header.html" %}
-    <br />
-    {% include "partials/sidebar.html" %}
-    <br />
     {% block body %}{% endblock %}
-    </div>
+    {% include "partials/footer.html" %}
   </body>
 </html>

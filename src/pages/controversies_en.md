@@ -1,6 +1,6 @@
 ---
 title: "controversies"
-layout: controversies.html
+layout: page.html
 ---
 
 controversies en
