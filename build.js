@@ -11,6 +11,7 @@ var metalsmith = require('metalsmith'),
     pagination = require('metalsmith-pagination'),
     assets = require('metalsmith-assets'),
     fromjsontocollection = require('./fromjsontocollection.js'),
+    moment = require('moment'),
     nunjucks = require('nunjucks'),
     dateFilter = require('nunjucks-date-filter');
 
@@ -35,6 +36,19 @@ env.addFilter('limitTo', function(input, limit) {
       return input.splice(input.length + limit, input.length);
     }
   }
+  return input;
+});
+
+env.addFilter('addMonthYear', function(input, prop) {
+  if (!prop || !input.length || !input) {
+    return input;
+  }
+
+  input.forEach(function(d){
+    var date = moment(d[prop])
+    d.monthYear = date.format('MMMM YYYY')
+  })
+
   return input;
 });
 
@@ -137,7 +151,7 @@ metalsmith(__dirname)
       console.log(err);
     }
     else {
-      console.log(files)
+      //console.log(files)
       console.log('Forccast built!');
     }
   });

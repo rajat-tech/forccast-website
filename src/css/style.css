@@ -153,6 +153,30 @@ h1,h2,h3,h4,h5,h6{
   width: 100%;
 }
 
+/* calendar*/
+
+.event-date{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.event-info-link{
+  display: flex;
+}
+
+.event-link{
+  flex-shrink: 0;
+}
+
+.event-info{
+  flex-shrink: 1;
+}
+
+.event-container{
+  flex-direction: column;
+}
+
 /* utilities */
 
 .flex{
@@ -203,6 +227,20 @@ h1,h2,h3,h4,h5,h6{
 
   .news-media{
     display: none;
+  }
+
+  .event-date{
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .event-info-link{
+    display: flex;
+    flex-shrink: 1;
+  }
+
+  .event-container{
+    flex-direction: row;
   }
 
 }
