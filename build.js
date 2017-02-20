@@ -52,6 +52,10 @@ env.addFilter('addMonthYear', function(input, prop) {
   return input;
 });
 
+env.addFilter('split', function(str, seperator) {
+    return str.split(seperator);
+});
+
 metalsmith(__dirname)
   .metadata({
     site: {

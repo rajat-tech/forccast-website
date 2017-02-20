@@ -8,10 +8,71 @@
       <div class="col-sm-8 col-md-6">
         <h2 class="hidden-xs hidden-sm">{{ title }}</h2>
         {{ contents | safe }}
+        {% for project in external %}
+          <div id="{{project.project_slug}}">
+            <div class="row">
+              <div class="col-md-7">
+                <h3>{{ project.project_title }}</h3>
+                <h5>{{ project.university_1 }}</h5>
+                <p>
+                  {{ project.theme_tags | replace('|', '·')}}
+                </p>
+              </div>
+              <div class="col-md-4 col-md-offset-1">
+                img
+                <button class="expand-details btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#details-{{loop.index}}" aria-expanded="false" aria-controls="details-{{loop.index}}">
+                  
+                </button>
+              </div>
+            </div>
+            <div class="row collapse" id="details-{{loop.index}}">
+              <div class="col-md-4">
+                <h4>details</h4>
+                <p>
+                  {{ project.course_title }}
+                  ({{ project.from_date}}{% if project.from_date != project.to_date %} - {{project.to_date}}{% endif %})
+                </p>
+                {% if project.tutors %}
+                <h4>tutors</h4>
+                <ul>
+                  {% for tutor in project.tutors | split('|') %}
+                    <li>
+                      {{tutor}}
+                    </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+                {% if project.course_teachers %}
+                <h4>teachers</h4>
+                <ul>
+                  {% for teacher in project.course_teachers | split('|') %}
+                    <li>
+                      {{teacher}}
+                    </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+              <div class="col-md-4">
+                  <h4>students</h4>
+                  <ul>
+                    {% for student in project.students | split('|') %}
+                      <li>
+                        {{student | trim }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                <a class="btn btn-default btn-block" href="{{project.website_url}}" target="_blank">Open project</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
       </div>
       <div class="col-sm-4 col-md-4 hidden-xs">
         <p>
-          notes
+          filters
         </p>
       </div>
     </div>
