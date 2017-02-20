@@ -87,7 +87,7 @@ h1,h2,h3,h4,h5,h6{
 .sidebar-mobile-container{
   width: calc(100% - 10%);
   background-color: white;
-  position: absolute;
+  position: fixed;
   top: 50px;
   z-index: 1;
   min-height: calc(100vh - 50px);
@@ -148,6 +148,11 @@ h1,h2,h3,h4,h5,h6{
   order: 0;
 }
 
+.news-media{
+  display: block;
+  width: 100%;
+}
+
 /* utilities */
 
 .flex{
@@ -194,6 +199,10 @@ h1,h2,h3,h4,h5,h6{
 
   .flex-wrap{
     flex-wrap: nowrap;
+  }
+
+  .news-media{
+    display: none;
   }
 
 }

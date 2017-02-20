@@ -1,12 +1,49 @@
 {% extends "default.html" %}
-
 {% block body %}
-    <h1>{{ title }}</h1>
-    <p>{{ date }}</p><!-- todo: format/pretty print date -->
-    {{ contents | safe }}
-     <ul>
-       {% for category in categories %}
-       <li>{{ category }}</li>
-     {% endfor %}
-     </ul>
+  {% include "partials/nav-mobile.html" %}
+  {% include "partials/sidebar-mobile.html" %}
+  <div class="container">
+    <div class="row">
+      {% include "partials/sidebar.html" %}
+      <div class="col-sm-6 col-md-5">
+        <h2>{{ title }}</h2>
+        <p>
+          Published by {{ author }} on {{ date | date("DD MMM YYYY") }}
+        </p>
+        <p>
+          Filed under <span class="news-category">{{ categories | join(' · ')}}</span>
+        </p>
+        {{ contents | safe }}
+        <p class="visible-xs">
+          <div class="btn-group pull-right archive-news-btn-group" role="group" aria-label="slide news">
+            <a type="button" class="btn btn-default {{ '' if previous else 'disabled' }}" href="/{{ previous.path if previous }}">
+              <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
+              </span>
+            </a>
+            <a type="button" class="btn btn-default {{ '' if next else 'disabled' }}" href="/{{ next.path if next }}">
+              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+              </span>
+            </a>
+          </div>
+        </p>
+      </div>
+      <div class="col-sm-6 col-md-5 hidden-xs">
+        <p>
+          {{ media | safe }}
+        </p>
+        <p class="hidden-xs">
+          <div class="btn-group pull-right archive-news-btn-group" role="group" aria-label="slide news">
+            <a type="button" class="btn btn-default {{ '' if previous else 'disabled' }}" href="/{{ previous.path if previous }}">
+              <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
+              </span>
+            </a>
+            <a type="button" class="btn btn-default {{ '' if next else 'disabled' }}" href="/{{ next.path if next }}">
+              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+              </span>
+            </a>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
 {% endblock %}

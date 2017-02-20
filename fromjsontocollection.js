@@ -42,6 +42,7 @@ function plugin(options){
               var meta     = collection.meta;
               var data     = _.extend(defaults, meta, metadata);
               var filename = collection.meta.collection + '/' + slug(d[collection.defaults.title]) + ( collection.meta.locale ?('_' + collection.meta.locale):'') + '.md';
+              delete data.collection
               files[filename] = data;
           })
 
