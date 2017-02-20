@@ -1,13 +1,30 @@
 {% extends "default.html" %}
-
 {% block body %}
-  <h1>{{ title }}</h1>
-  {{ contents | safe }}
-  <ul>
-    {% for person in external %}
-      <li>
-        {{ person.firstname }} {{ person.lastname }}
-      </li>
-    {% endfor %}
-  </ul>
+  {% include "partials/nav-mobile.html" %}
+  {% include "partials/sidebar-mobile.html" %}
+  <div class="container">
+    <div class="row">
+      {% include "partials/sidebar.html" %}
+      <div class="col-md-10">
+        <h2 class="hidden-xs hidden-sm">{{ title }}</h2>
+        {{ contents | safe }}
+        {% for person in external %}
+          <div class="team-person">
+              <h4>
+                {{ person.firstname }} {{ person.lastname }}
+                <span class="team-role">{{ person.role }}</span>
+              </h4>
+              {% if person.personal_url %}
+                <h5 class="team-url">
+                  {{ person.personal_url}}
+                </h5>
+              {% endif %}
+              <p>
+                {{ person.bio_html}}
+              </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 {% endblock %}

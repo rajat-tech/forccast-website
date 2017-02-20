@@ -177,6 +177,16 @@ h1,h2,h3,h4,h5,h6{
   flex-direction: column;
 }
 
+/* team */
+
+.team-person h4{
+  font-weight: bold;
+}
+
+.team-person .team-role{
+  font-weight: normal;
+}
+
 /* utilities */
 
 .flex{
