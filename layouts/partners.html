@@ -1,13 +1,30 @@
 {% extends "default.html" %}
-
 {% block body %}
-  <h1>{{ title }}</h1>
-  {{ contents | safe }}
-  <ul>
-    {% for partner in external %}
-      <li>
-        {{ partner.name }}
-      </li>
-    {% endfor %}
-  </ul>
+  {% include "partials/nav-mobile.html" %}
+  {% include "partials/sidebar-mobile.html" %}
+  <div class="container">
+    <div class="row">
+      {% include "partials/sidebar.html" %}
+      <div class="col-md-10">
+        <h2 class="hidden-xs hidden-sm">{{ title }}</h2>
+        {{ contents | safe }}
+        {% for partner in external %}
+          <div class="partner-person">
+              <h4>
+                {{ partner.name }}
+                <span class="partner-role"> ({{ partner.country }})</span>
+              </h4>
+              {% if partner.url %}
+                <h5 class="partner-url">
+                  {{ partner.url }}
+                </h5>
+              {% endif %}
+              <p>
+                {{ partner.description }}
+              </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 {% endblock %}

@@ -179,11 +179,13 @@ h1,h2,h3,h4,h5,h6{
 
 /* team */
 
-.team-person h4{
+.team-person h4,
+.partner-person h4{
   font-weight: bold;
 }
 
-.team-person .team-role{
+.team-person .team-role,
+.partner-person .partner-role{
   font-weight: normal;
 }
 
