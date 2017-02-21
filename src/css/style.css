@@ -90,7 +90,8 @@ h1,h2,h3,h4,h5,h6{
   position: fixed;
   top: 50px;
   z-index: 1;
-  min-height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
   transform: translate(-100%);
   transition: transform 0.5s;
 }
