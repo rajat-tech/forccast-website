@@ -206,6 +206,29 @@ h1,h2,h3,h4,h5,h6{
     content:'\2212';
 }
 
+.filters-container{
+    position: fixed;
+    top: 50px;
+    background: white;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    transform: translate(100%);
+    transition: transform 0.5s;
+}
+
+.filters-container.collapsed{
+  transform: translate(0%);
+}
+
+.open-filters{
+  float: right;
+  margin-right: 15px;
+  margin-left: 0px;
+  position: relative;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 /* utilities */
 
 mark{
@@ -285,6 +308,16 @@ mark{
   .expand-details[aria-expanded="true"]:before {
       content:'collapse';
   }
+
+  .filters-container{
+      position: inherit;
+      top: 0px;
+      background: white;
+      height: auto;
+      overflow-y: inherit;
+      transform: none;
+  }
+
 }
 
 @media (min-width: 992px) {

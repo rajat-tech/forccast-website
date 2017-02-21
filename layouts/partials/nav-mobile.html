@@ -12,6 +12,11 @@
           {{ title }}
         {% endif%}
       </a>
+      {% if title == 'projects' %}
+      <button type="button" class="btn btn-default open-filters visible-xs">
+        <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+      </button>
+      {% endif %}
     </div>
   </div>
 </nav>

@@ -89,7 +89,13 @@
           </p>
         </div>
       </div>
-      <div class="col-sm-4 col-md-4 hidden-xs">
+      <div class="col-sm-4 col-md-4 filters-container">
+        <p class="visible-xs">
+          <span class="selected-projects">
+            {{ external.projects.length }}
+          </span>
+          / {{ external.projects.length }}
+        </p>
         <form>
           <div class="form-group">
             <input type="text" class="form-control" id="project-search" placeholder="Search">

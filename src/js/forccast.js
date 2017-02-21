@@ -7,6 +7,12 @@ $( document ).ready(function() {
       $('.hamburger > .glyphicon').toggleClass('glyphicon-remove')
     })
 
+    $('.open-filters').click(function(){
+      $('.filters-container').toggleClass('collapsed')
+      $('.open-filters > .glyphicon').toggleClass('glyphicon-filter')
+      $('.open-filters > .glyphicon').toggleClass('glyphicon-ok')
+    })
+
     /* handle slide news arrows */
     $('.latest-news-btn-group > .left').click(function(){
       var left = $('.last-news-container').scrollLeft();
