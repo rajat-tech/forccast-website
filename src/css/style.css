@@ -191,11 +191,19 @@ h1,h2,h3,h4,h5,h6{
 
 /* project */
 .expand-details:before {
-   content:'expand'
+   content:'';
+}
+
+.expand-details .glyphicon:before {
+   content:'\002b';
 }
 
 .expand-details[aria-expanded="true"]:before {
-    content:'collapse';
+    content:'';
+}
+
+.expand-details[aria-expanded="true"] .glyphicon:before {
+    content:'\2212';
 }
 
 /* utilities */
@@ -270,6 +278,13 @@ mark{
     flex-direction: row;
   }
 
+  .expand-details:before {
+     content:'expand'
+  }
+
+  .expand-details[aria-expanded="true"]:before {
+      content:'collapse';
+  }
 }
 
 @media (min-width: 992px) {
