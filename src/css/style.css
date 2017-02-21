@@ -200,6 +200,12 @@ h1,h2,h3,h4,h5,h6{
 
 /* utilities */
 
+mark{
+    background: #E6142D;
+    color: white;
+    padding: 0px;
+}
+
 .flex{
   display: flex;
   display: -webkit-flex;
