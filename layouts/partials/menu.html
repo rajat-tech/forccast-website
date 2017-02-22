@@ -1,36 +1,36 @@
 {% block menu %}
+
      <ul class="nav nav-pills nav-stacked">
-       <li>
+       <li class="{{ 'active' if layout == 'index.html' }}">
          <a href="{{ '/' if locale === defaultLocale else '/'+locale }}">Intro</a>
        </li>
        {% for page in pages %}
         {% if page.locale == locale and page.level == 0 %}
-        <li>
+        <li class="{{ 'active' if page.path == path }}">
           <a href="/{{ page.path }}">{{ page.title }}</a>
         </li>
         {% endif %}
        {% endfor %}
      </ul>
      <ul class="nav nav-pills nav-stacked">
-       <li>
+       <li class="{{ 'active' if layout == 'news-archive.html' or  layout == 'news.html'}}">
          <a href="/{{ locale }}/news/">news</a>
        </li>
        {% for page in pages %}
         {% if page.locale == locale and page.level == 1 %}
-          <li>
+          <li class="{{ 'active' if page.path == path }}">
             <a href="/{{ page.path }}">{{ page.title }}</a>
           </li>
         {% endif %}
        {% endfor %}
      </ul>
-
-     <ul>
-       {% for locale in locales %}
-          <li>
+     <ul class="nav nav-pills nav-stacked">
+       {% for language in locales %}
+          <li class="{{ 'active' if language == locale }}">
             {% if layout == 'news-archive.html' or layout == 'news.html' %}
-              <a href="/{{locale}}/news">{{ locale }}</a>
+              <a href="/{{language}}/news">{{ language }}</a>
             {% else %}
-              <a href="/{{ lang(locale).path }}">{{ locale }}</a>
+              <a href="/{{ lang(language).path }}">{{ language }}</a>
             {% endif %}
           </li>
        {% endfor %}

@@ -87,6 +87,9 @@ metalsmith(__dirname)
     directory: 'data/',
     dataProperty: 'external',
   }))
+  .use(multilanguage({
+    default: 'fr', locales: ['fr', 'en']
+  }))
   .use(pagination({
     'collections.news_fr': {
       perPage: 10,
@@ -94,7 +97,8 @@ metalsmith(__dirname)
       first: 'fr/news/index.html',
       path: 'fr/news/:num/index.html',
       pageMetadata: {
-        title: 'Latest news'
+        title: 'Latest news',
+        locale: 'fr'
       }
     },
     'collections.news_en': {
@@ -103,13 +107,14 @@ metalsmith(__dirname)
       first: 'en/news/index.html',
       path: 'en/news/:num/index.html',
       pageMetadata: {
-        title: 'Latest news'
+        title: 'Latest news',
+        locale: 'en'
       }
     }
   }))
-  .use(multilanguage({
-    default: 'fr', locales: ['fr', 'en']
-  }))
+  // .use(multilanguage({
+  //   default: 'fr', locales: ['fr', 'en']
+  // }))
   .use(i18n({
     default: 'fr',
     locales: ['fr', 'en'],
