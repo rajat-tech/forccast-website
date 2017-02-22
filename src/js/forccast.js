@@ -59,4 +59,9 @@ $( document ).ready(function() {
 
     })
 
+    /* responsive videos */
+
+    $(".news-mobile.embed-responsive-item").wrap( "<div class='news-media embed-responsive embed-responsive-16by9'></div>" );
+    $(".news-desk.embed-responsive-item").wrap( "<div class='embed-responsive embed-responsive-16by9'></div>" );
+
 });
