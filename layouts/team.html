@@ -6,7 +6,7 @@
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-md-10">
-        <h2 class="hidden-xs hidden-sm">{{ title }}</h2>
+        <h2 class="hidden-xs hidden-sm">{{ __(title) }}</h2>
         {{ contents | safe }}
         {% for person in external %}
           <div class="team-person">

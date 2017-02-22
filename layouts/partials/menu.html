@@ -2,24 +2,24 @@
 
      <ul class="nav nav-pills nav-stacked">
        <li class="{{ 'active' if layout == 'index.html' }}">
-         <a href="{{ '/' if locale === defaultLocale else '/'+locale }}">Intro</a>
+         <a href="{{ '/' if locale === defaultLocale else '/'+locale }}">{{__('intro')}}</a>
        </li>
        {% for page in pages %}
         {% if page.locale == locale and page.level == 0 %}
         <li class="{{ 'active' if page.path == path }}">
-          <a href="/{{ page.path }}">{{ page.title }}</a>
+          <a href="/{{ page.path }}">{{__(page.title)}}</a>
         </li>
         {% endif %}
        {% endfor %}
      </ul>
      <ul class="nav nav-pills nav-stacked">
        <li class="{{ 'active' if layout == 'news-archive.html' or  layout == 'news.html'}}">
-         <a href="/{{ locale }}/news/">news</a>
+         <a href="/{{ locale }}/news/">{{__('news')}}</a>
        </li>
        {% for page in pages %}
         {% if page.locale == locale and page.level == 1 %}
           <li class="{{ 'active' if page.path == path }}">
-            <a href="/{{ page.path }}">{{ page.title }}</a>
+            <a href="/{{ page.path }}">{{__(page.title)}}</a>
           </li>
         {% endif %}
        {% endfor %}

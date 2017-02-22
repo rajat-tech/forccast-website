@@ -97,7 +97,7 @@ metalsmith(__dirname)
       first: 'fr/news/index.html',
       path: 'fr/news/:num/index.html',
       pageMetadata: {
-        title: 'Latest news',
+        title: 'latest news',
         locale: 'fr'
       }
     },
@@ -107,7 +107,7 @@ metalsmith(__dirname)
       first: 'en/news/index.html',
       path: 'en/news/:num/index.html',
       pageMetadata: {
-        title: 'Latest news',
+        title: 'latest news',
         locale: 'en'
       }
     }

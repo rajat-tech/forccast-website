@@ -1,5 +1,5 @@
 ---
-title: "What is forccast?"
+title: "what is forccast?"
 level: 0
 layout: page.html
 ---

@@ -7,7 +7,7 @@
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-md-10">
-        <h2 class="hidden-xs hidden-sm">{{ title }}</h2>
+        <h2 class="hidden-xs hidden-sm">{{ __(title) }}</h2>
         {{ contents | safe }}
         {% for row in external | batch(2) %}
           <div class="row">
@@ -21,7 +21,7 @@
                      </p>
                    </div>
                    <div class="col-sm-3 col-sm-offset-1 col-md-offset-0 col-md-4">
-                     <a class="btn btn-default btn-block" href="{{ resource.url }}" target="_blank">link to resource</a>
+                     <a class="btn btn-default btn-block" href="{{ resource.url }}" target="_blank">{{ __('link to resource') }}</a>
                    </div>
                  </div>
               </div>

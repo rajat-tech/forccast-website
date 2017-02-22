@@ -6,10 +6,10 @@
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-md-10">
-        <h2 class="hidden-xs hidden-sm">{{ title }}</h2>
+        <h2 class="hidden-xs hidden-sm">{{ __(title) }}</h2>
         {% if external | length == 0 %}
           <p>
-            No events in the near future...
+            {{ __('no events') }}
           </p>
         {% endif %}
         {% for group, events in external | addMonthYear('start') | groupby("monthYear") %}
@@ -43,7 +43,7 @@
                     </div>
                     <div class="event-link">
                       <a class="btn btn-default" href="{{event.htmlLink}}" target="_blank">
-                        <span class="hidden-xs">Add to calendar</span> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        <span class="hidden-xs">{{ __('add to calendar') }}</span> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                       </a>
                     </div>
                   </div>

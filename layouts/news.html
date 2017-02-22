@@ -14,7 +14,7 @@
           Filed under <span class="news-category">{{ categories | join(' · ')}}</span>
         </p>
         {{ contents | safe }}
-        <p class="visible-xs">
+        <div class="visible-xs">
           <div class="btn-group pull-right archive-news-btn-group" role="group" aria-label="slide news">
             <a type="button" class="btn btn-default {{ '' if previous else 'disabled' }}" href="/{{ previous.path if previous }}">
               <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
@@ -25,7 +25,7 @@
               </span>
             </a>
           </div>
-        </p>
+        </div>
       </div>
       <div class="col-sm-6 col-md-5 hidden-xs">
         <p>

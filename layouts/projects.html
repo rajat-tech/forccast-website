@@ -6,7 +6,7 @@
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-sm-8 col-md-6" id="project-list">
-        <h2 class="hidden-xs hidden-sm latest-news">{{ title }}</h2>
+        <h2 class="hidden-xs hidden-sm latest-news">{{__(title)}}</h2>
         <p class="pull-right">
           <span class="selected-projects">
             {{ external.projects.length }}
@@ -40,13 +40,13 @@
             </div>
             <div class="row collapse" id="details-{{loop.index}}">
               <div class="col-sm-4">
-                <h4>details</h4>
+                <h4>{{__('details')}}</h4>
                 <p class="search-course">
                   {{ project.course_title }}
                   ({{ project.from_date}}{% if project.from_date != project.to_date %} - {{project.to_date}}{% endif %})
                 </p>
                 {% if project.tutors %}
-                <h4>tutors</h4>
+                <h4>{{__('tutors')}}</h4>
                 <ul class="search-tutors">
                   {% for tutor in project.tutors | split('|') %}
                     <li>
@@ -56,7 +56,7 @@
                 </ul>
                 {% endif %}
                 {% if project.course_teachers %}
-                <h4>teachers</h4>
+                <h4>{{__('teachers')}}</h4>
                 <ul class="search-teachers">
                   {% for teacher in project.course_teachers | split('|') %}
                     <li>
@@ -67,7 +67,7 @@
                 {% endif %}
               </div>
               <div class="col-sm-4">
-                  <h4>students</h4>
+                  <h4>{{__('students')}}</h4>
                   <ul class="search-students">
                     {% for student in project.students | split('|') %}
                       <li>
@@ -77,7 +77,7 @@
                   </ul>
               </div>
               <div class="col-sm-4">
-                <a class="btn btn-default btn-block" href="{{project.website_url}}" target="_blank">Open project</a>
+                <a class="btn btn-default btn-block" href="{{project.website_url}}" target="_blank">{{__('open project')}}</a>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@
         </div>
         <div class="no-results hidden">
           <p>
-            no results, sorry!
+            {{ __('no results, sorry!') }}
           </p>
         </div>
       </div>
@@ -98,7 +98,7 @@
         </p>
         <form>
           <div class="form-group">
-            <input type="text" class="form-control" id="project-search" placeholder="Search">
+            <input type="text" class="form-control" id="project-search" placeholder="{{__('search')}}">
           </div>
           {% for typology in external.meta.typology %}
           <div class="checkbox">
@@ -108,13 +108,13 @@
           </div>
           {% endfor %}
           <div class="institutions-container">
-            <h4>institutions</h4>
+            <h4>{{__('institutions')}}</h4>
             {% for institution in external.meta.institutions %}
             <button type="button" class="btn btn-default btn-xs" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ institution.label }}">{{ institution.label }}</button>
             {% endfor %}
           </div>
           <div class="tags-container">
-            <h4>tags</h4>
+            <h4>{{__('tags')}}</h4>
             {% for tag in external.meta.tags %}
             <button type="button" class="btn btn-default btn-xs" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ tag.label }}">{{ tag.label }}</button>
             {% endfor %}
