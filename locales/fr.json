@@ -5,7 +5,7 @@
 	"resources": "ressources",
 	"what is forccast?": "c'est quoi forccast?",
 	"news": "nouvelles",
-	"latest news": "latest news",
+	"latest news": "denrier articles",
 	"partners": "partenaires",
 	"events": "événements",
 	"team": "équipe",
@@ -28,5 +28,5 @@
 	"link to resources": "link to resources",
 	"no events": "pas d'événements",
 	"no results, sorry!": "pas des results",
-	"Latest news": "Latest news"
+	"forccast": "forccast"
 }

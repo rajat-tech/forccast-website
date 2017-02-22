@@ -7,9 +7,9 @@
       </button>
       <a class="navbar-brand">
         {% if collection == 'news_fr' or collection == 'news_en' %}
-          news
+          {{__('news')}}
         {% else %}
-          {{ title }}
+          {{ __(title) }}
         {% endif%}
       </a>
       {% if title == 'projects' %}
