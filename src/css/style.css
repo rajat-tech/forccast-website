@@ -71,6 +71,18 @@ h1,h2,h3,h4,h5,h6{
   font-family: 'Titillium Web', Arial, sans-serif;
 }
 
+h2{
+  font-weight: 600;
+  font-size: 27px;
+}
+
+h4{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+/*Global UI*/
 .container{
   margin-left: 0px;
 }
@@ -99,6 +111,11 @@ h1,h2,h3,h4,h5,h6{
 .sidebar-mobile-container.collapse{
   transform: translate(0);
 }
+
+.header-page {
+  padding-bottom: 135px;
+}
+
 
 .latest-news{
   display: inline-block;
@@ -152,6 +169,17 @@ h1,h2,h3,h4,h5,h6{
 .news-media{
   display: block;
   width: 100%;
+}
+
+.news-category {
+  font-family: 'hk_grotesk', sans-serif;
+  font-size: 10px;
+  color: #E6142D;
+  text-transform: uppercase;
+}
+
+.news-box a{
+  color: #000;
 }
 
 /* calendar*/
@@ -277,7 +305,13 @@ mark{
   }
 
   .news-img{
-    flex: 0 0 130px;
+    flex: 0 0 200px;
+    margin-right: 27px;
+  }
+
+  .news-box {
+    padding: 27px 27px 27px 0;
+    border-top: 1px solid #EEEEEE;
   }
 
   .flex-wrap{
