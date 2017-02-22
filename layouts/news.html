@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="row">
       {% include "partials/sidebar.html" %}
-      <div class="col-sm-6 col-md-5">
+      <div class="col-sm-6 col-md-5 col-md-offset-2">
         <h2>{{ title }}</h2>
         <p>
           Published by {{ author }} on {{ date | date("DD MMM YYYY", locale) }}
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-5 hidden-xs">
+      <div class="col-sm-6 col-md-5 hidden-xs col-md-offset-7 fixed-rightbar ">
         <p>
           {{ media | safe }}
         </p>

@@ -96,6 +96,73 @@ h4{
   margin-bottom: 8px;
 }
 
+.fixed-sidemenu {
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  border-right:1px solid #EEEEEE;
+  border-top: 5px solid #F62837;
+}
+
+.active>a{
+  color: #F62837!important;
+}
+
+.languages .active>a{
+  color: #000!important;
+  text-decoration: underline;
+}
+
+.fixed-sidemenu a {
+    color: #000;
+}
+
+.sidemenu-logo{
+  padding-bottom: 27px;
+}
+
+.sidemenu-1{
+  font-family: 'Titillium Web', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border-top:1px solid #EEEEEE;
+  padding-top: 27px;
+}
+
+.sidemenu-2{
+  margin-top: auto;
+  font-family: 'hk_grotesk', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border-top:1px solid #EEEEEE;
+  padding-top: 18px;
+}
+
+.sidemenu-1>.nav>li>a {
+    padding: 9px 5px;
+}
+
+.sidemenu-2>.nav>li>a {
+    padding: 3px 5px;
+}
+
+.sidemenu-2>ul {
+    margin-bottom: 18px;
+}
+
+.languages {
+  margin-bottom: 18px;
+  padding-left: 5px;
+}
+
+.fixed-rightbar {
+  position: fixed;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
 .sidebar-mobile-container{
   width: calc(100% - 10%);
   background-color: white;
@@ -306,11 +373,9 @@ mark{
 
   .news-img{
     flex: 0 0 200px;
-    margin-right: 27px;
   }
 
   .news-box {
-    padding: 27px 27px 27px 0;
     border-top: 1px solid #EEEEEE;
   }
 
@@ -345,12 +410,12 @@ mark{
   }
 
   .filters-container{
-      position: inherit;
-      top: 0px;
-      background: white;
-      height: auto;
-      overflow-y: inherit;
-      transform: none;
+    position: fixed;
+    top: 0px;
+    background: white;
+    height: 100vh;
+    overflow-y: scroll;
+    transform: none;
   }
 
 }
