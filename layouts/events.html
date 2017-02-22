@@ -12,15 +12,15 @@
             {{ __('no events') }}
           </p>
         {% endif %}
-        {% for group, events in external | addMonthYear('start') | groupby("monthYear") %}
+        {% for group, events in external | addMonthYear('start', locale) | groupby("monthYear") %}
           <h4>{{ group }}</h4>
               {% for event in events%}
                 <div class="event-container flex">
                   <div class="event-date">
                     <h4>
-                      {{ event.start | date("DD MMM") }}
-                      {% if event.start | date("DD MMM") != event.end | date("DD MMM") %}
-                       - {{ event.end | date("DD MMM")}}
+                      {{ event.start | date("DD MMM", locale) }}
+                      {% if event.start | date("DD MMM", locale) != event.end | date("DD MMM", locale) %}
+                       - {{ event.end | date("DD MMM", locale)}}
                       {%endif%}
                     </h4>
                     <p>

@@ -28,7 +28,7 @@
                   </div>
                   <div class="news-info flex flex-column">
                     <p class="news-date">
-                      {{ news.date | date("DD MMM YYYY") }}
+                      {{ news.date | date("DD MMM YYYY", locale) }}
                     </p>
                     <a href="/{{ news.path }}">
                       <h4>{{ news.title }}</h4>

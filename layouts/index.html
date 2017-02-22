@@ -28,7 +28,7 @@
             {% for news in collections['news_'+locale] | limitTo(10) %}
               <div class="last-news">
                 <p class="last-news-date">
-                  {{ news.date | date("DD MMM YYYY") }}
+                  {{ news.date | date("DD MMM YYYY", locale) }}
                 </p>
                 <h5><a href="/{{ news.path }}">{{ news.title }}</a></h5>
                 <p class="last-news-category">

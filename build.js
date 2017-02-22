@@ -13,7 +13,7 @@ var metalsmith = require('metalsmith'),
     fromjsontocollection = require('./fromjsontocollection.js'),
     moment = require('moment'),
     nunjucks = require('nunjucks'),
-    dateFilter = require('nunjucks-date-filter');
+    dateFilter = require('./datefilter');
 
 var env = nunjucks.configure('layouts', {watch: false,  noCache: true})
 env.addFilter('date',dateFilter);
@@ -39,14 +39,15 @@ env.addFilter('limitTo', function(input, limit) {
   return input;
 });
 
-env.addFilter('addMonthYear', function(input, prop) {
+env.addFilter('addMonthYear', function(input, prop, locale) {
   if (!prop || !input.length || !input) {
     return input;
   }
 
   input.forEach(function(d){
-    var date = moment(d[prop])
-    d.monthYear = date.format('MMMM YYYY')
+    moment.locale(locale?locale:'en');
+    var date = moment(d[prop]);
+    d.monthYear = date.format('MMMM YYYY');
   })
 
   return input;
