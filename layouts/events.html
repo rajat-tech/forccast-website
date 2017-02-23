@@ -6,7 +6,7 @@
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-md-10 col-md-offset-2">
-        <h2 class="hidden-xs hidden-sm">{{ __(title) }}</h2>
+        <h2 class="hidden-xs hidden-sm header-page">{{ __(title) }}</h2>
         {% if external | length == 0 %}
           <p>
             {{ __('no events') }}

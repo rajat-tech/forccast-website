@@ -5,15 +5,17 @@
   <div class="container-fluid">
     <div class="row">
       {% include "partials/sidebar.html" %}
-      <div class="col-sm-6 col-md-5 col-md-offset-2">
+      <div class="col-sm-6 col-md-5 col-md-offset-2 header-page">
         <h2>{{ title }}</h2>
+        <div class="news-content">
         <p>
-          Published by {{ author }} on {{ date | date("DD MMM YYYY", locale) }}
+          <small>Published by {{ author }} on {{ date | date("DD MMM YYYY", locale) }}</small>
         </p>
         <p>
-          Filed under <span class="news-category">{{ categories | join(' · ')}}</span>
+          <small>Filed under</small> <span class="news-category">{{ categories | join(' · ')}}</span>
         </p>
         {{ contents | safe }}
+        </div>
         <div class="visible-xs">
           <div class="btn-group pull-right archive-news-btn-group" role="group" aria-label="slide news">
             <a type="button" class="btn btn-default {{ '' if previous else 'disabled' }}" href="/{{ previous.path if previous }}">
@@ -27,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-5 hidden-xs col-md-offset-7 fixed-rightbar ">
+      <div class="col-sm-6 col-md-5 hidden-xs col-md-offset-7 fixed-rightbar">
         <p>
           {{ media | safe }}
         </p>
