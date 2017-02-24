@@ -87,7 +87,8 @@ metalsmith(__dirname)
       reverse: true
     },
     pages: {
-      pattern: 'pages/**/*.md'
+      pattern: 'pages/**/*.md',
+      sortBy: 'sort'
     }
   }))
   .use(dataloader({
