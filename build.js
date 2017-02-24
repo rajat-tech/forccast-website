@@ -10,7 +10,11 @@ var metalsmith = require('metalsmith'),
     dataloader = require('metalsmith-data-loader'),
     pagination = require('metalsmith-pagination'),
     assets = require('metalsmith-assets'),
+    ignore = require('metalsmith-ignore'),
+    uglify = require('metalsmith-uglify'),
+    excerpts = require('metalsmith-excerpts'),
     fromjsontocollection = require('./fromjsontocollection.js'),
+    bower = require('./bowerassets.js'),
     moment = require('moment'),
     nunjucks = require('nunjucks'),
     dateFilter = require('./datefilter');
@@ -61,13 +65,15 @@ metalsmith(__dirname)
   .metadata({
     site: {
       name: 'Forccast',
-      baseurl: 'https://www.forccast.fr',
+      url: 'https://www.forccast.fr',
+      baseurl: '/',
       author: 'Forccast team',
       description: 'Formation par la cartographie des controverses à l\'analyse des sciences et des techniques'
     }
   })
   .source('./src')
   .destination('./build')
+  .clean(true)
   .use(fromjsontocollection())
   .use(collections({
     news_en: {
@@ -113,9 +119,6 @@ metalsmith(__dirname)
       }
     }
   }))
-  // .use(multilanguage({
-  //   default: 'fr', locales: ['fr', 'en']
-  // }))
   .use(i18n({
     default: 'fr',
     locales: ['fr', 'en'],
@@ -137,14 +140,11 @@ metalsmith(__dirname)
         pattern: ':locale/:title'
     }]
   }))
+  .use(excerpts())
   .use(layouts({
     engine: 'nunjucks',
     pattern: '**/*.html',
     directory: 'layouts'
-  }))
-  .use(assets({
-    source: './bower_components', // relative to the working directory
-    destination: './assets' // relative to the build directory
   }))
   .use(serve({
     port: 8081,
@@ -156,6 +156,8 @@ metalsmith(__dirname)
         "layouts/**/*": "**/*"
       }
     }))
+  .use(ignore('**/\.DS_Store'))
+  .use(bower({path:'./assets'}))
   .build(function (err, files) {
     if (err) {
       console.log(err);

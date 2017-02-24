@@ -5,14 +5,16 @@
 
   <title>
     {% if collection == 'news_fr' or collection == 'news_en' %}
-      {{__('news')}}
+      {{ title | trim }}
     {% else %}
-      {{ __(title) }}
+      {{ __(title) | trim }}
     {% endif%}
   </title>
+  <meta name="description" content="{% if excerpt %}{{ excerpt | striptags() | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="{{site.author}}">
   <!-- CSS -->
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
 
   <link rel="stylesheet" href="/css/style.css">
 {% endblock %}

@@ -1,6 +1,5 @@
 $( document ).ready(function() {
 
-  console.log('hello projects')
   var options = {
     valueNames: [
       'search-tags',
