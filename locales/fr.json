@@ -17,7 +17,7 @@
 	"collapse": "déplier",
 	"institutions": "institutions",
 	"tags": "mots clés",
-	"details": "détails",
+	"cours": "cours",
 	"students": "élèves",
 	"tutors": "tuteurs",
 	"teachers": "teachers",
@@ -28,5 +28,6 @@
 	"link to resources": "link to resources",
 	"no events": "pas d'événements",
 	"no results, sorry!": "pas des results",
-	"forccast": "forccast"
+	"forccast": "forccast",
+	"course": "course"
 }

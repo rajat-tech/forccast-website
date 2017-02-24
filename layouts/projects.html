@@ -6,7 +6,7 @@
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-sm-8 col-md-6 col-md-offset-2" id="project-list">
-        <h2 class="hidden-xs hidden-sm latest-news">{{__(title)}}</h2>
+        <h2 class="hidden-xs hidden-sm latest-news header-page">{{__(title)}}</h2>
         <p class="pull-right">
           <span class="selected-projects">
             {{ external.projects.length }}
@@ -17,9 +17,12 @@
         <div class="list">
         {% for project in external.projects %}
           <div id="{{project.project_slug}}">
-            <div class="row">
-              <div class="col-xs-10 col-sm-7">
-                <h3 class="search-title search-typology" data-typology="{{project.typology}}">{{ project.project_title }}</h3>
+            <div class="row project-box">
+              <div class="col-xs-12 col-sm-8">
+                <h4 class="search-title search-typology" data-typology="{{project.typology}}">
+                  {{ project.project_title }}
+                  <button type="button" class="expand-detail btn btn-default btn-circle" data-toggle="collapse" data-target="#details-{{loop.index}}" aria-expanded="false" aria-controls="details-{{loop.index}}"><i class="glyphicon glyphicon-plus"></i></button>
+                </h4>
                 <h5 class="search-institutions">
                   {{ project.university_1 }}
                   {{ (' · ' + project.university_2) if project.university_2 }}
@@ -29,9 +32,8 @@
                   {{ project.theme_tags | replace('|', '·')}}
                 </p>
               </div>
-              <div class="col-xs-2 col-sm-4 col-sm-offset-1">
-                <img src="" class="hidden-xs"/>
-                <button class="expand-details btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#details-{{loop.index}}" aria-expanded="false" aria-controls="details-{{loop.index}}">
+              <div class="col-xs-2 col-sm-4">
+                <img src="/media/placeholder.png" class="hidden-xs"/>
                   <div class="visible-xs">
                     <span class="glyphicon" aria-hidden="true"></span>
                   </div>
@@ -40,13 +42,13 @@
             </div>
             <div class="row collapse" id="details-{{loop.index}}">
               <div class="col-sm-4">
-                <h4>{{__('details')}}</h4>
+                <h6>{{__('course')}}</h6>
                 <p class="search-course">
                   {{ project.course_title }}
                   ({{ project.from_date}}{% if project.from_date != project.to_date %} - {{project.to_date}}{% endif %})
                 </p>
                 {% if project.tutors %}
-                <h4>{{__('tutors')}}</h4>
+                <h6>{{__('tutors')}}</h6>
                 <ul class="search-tutors">
                   {% for tutor in project.tutors | split('|') %}
                     <li>
@@ -56,7 +58,7 @@
                 </ul>
                 {% endif %}
                 {% if project.course_teachers %}
-                <h4>{{__('teachers')}}</h4>
+                <h6>{{__('teachers')}}</h6>
                 <ul class="search-teachers">
                   {% for teacher in project.course_teachers | split('|') %}
                     <li>
@@ -67,7 +69,7 @@
                 {% endif %}
               </div>
               <div class="col-sm-4">
-                  <h4>{{__('students')}}</h4>
+                  <h6>{{__('students')}}</h6>
                   <ul class="search-students">
                     {% for student in project.students | split('|') %}
                       <li>
@@ -110,13 +112,13 @@
           <div class="institutions-container">
             <h4>{{__('institutions')}}</h4>
             {% for institution in external.meta.institutions %}
-            <button type="button" class="btn btn-default btn-xs" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ institution.label }}">{{ institution.label }}</button>
+            <button type="button" class="btn btn-default btn-xs filter-pills" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ institution.label }}">{{ institution.label }}</button>
             {% endfor %}
           </div>
           <div class="tags-container">
             <h4>{{__('tags')}}</h4>
             {% for tag in external.meta.tags %}
-            <button type="button" class="btn btn-default btn-xs" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ tag.label }}">{{ tag.label }}</button>
+            <button type="button" class="btn btn-default btn-xs filter-pills" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ tag.label }}">{{ tag.label }}</button>
             {% endfor %}
           </div>
         </form>
