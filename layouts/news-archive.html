@@ -43,10 +43,10 @@
             <div class="archive-news-btn-group" role="group" aria-label="slide news">
               <a type="button" class="btn btn-default {{ '' if pagination.previous else 'disabled' }}" href="/{{ pagination.previous.path if pagination.previous }}">
                 <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
-                </span> Next
+                </span> {{ __("next") }}
               </a>
               <a type="button" class="btn btn-default {{ '' if pagination.next else 'disabled' }}" href="/{{ pagination.next.path if pagination.next }}">
-                Prev <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+                {{ __("prev") }} <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
                 </span>
               </a>
             </div>
