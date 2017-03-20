@@ -7,11 +7,11 @@
       {% include "partials/sidebar.html" %}
       <div class="col-md-5 col-md-offset-2">
         <h2 class="hidden-xs hidden-sm header-page">{{ __(title) }}</h2>
-        <p class="lead">
-        </p>
         {{ contents | safe }}
+        <div class="team-container">
         {% for person in external %}
           <div class="team-person">
+              <hr>
               <h4>
                 {{ person.firstname }} {{ person.lastname }}
                 <span class="team-role">{{ person.role }}</span>
@@ -26,6 +26,7 @@
               </p>
           </div>
         {% endfor %}
+      </div>
       </div>
     </div>
   </div>

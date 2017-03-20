@@ -1,34 +1,40 @@
-{% extends "default.html" %}
-{% extends "default.html" %}
-{% block body %}
+  {% extends "default.html" %}
+  {% extends "default.html" %}
+  {% block body %}
   {% include "partials/nav-mobile.html" %}
   {% include "partials/sidebar-mobile.html" %}
   <div class="container-fluid">
     <div class="row">
       {% include "partials/sidebar.html" %}
-      <div class="col-md-10 col-md-offset-2">
-        <h2 class="hidden-xs hidden-sm">{{ __(title) }}</h2>
+      <div class="col-md-5 col-md-offset-2">
+        <h2 class="hidden-xs hidden-sm header-page">{{ __(title) }}</h2>
         {{ contents | safe }}
         {% for row in external | batch(2) %}
-          <div class="row">
-            {% for resource in row %}
-              <div class="col-md-6">
-                 <div class="row">
-                   <div class="col-sm-8 col-md-8">
-                     <h4>{{ resource.name }}</h4>
-                     <p>
-                       {{ resource.presentation }}
-                     </p>
-                   </div>
-                   <div class="col-sm-3 col-sm-offset-1 col-md-offset-0 col-md-4">
-                     <a class="btn btn-default btn-block" href="{{ resource.url }}" target="_blank">{{ __('link to resource') }}</a>
-                   </div>
-                 </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-2 resources-archive">
+        <div class="row">
+          {% for resource in row %}
+          <div class="col-md-6">
+            <div class="row">
+              <div class="resource-box">
+              <div class="col-sm-8 col-md-8">
+                <h4>{{ resource.name }}</h4>
+                <p>
+                  {{ resource.presentation }}
+                </p>
               </div>
-            {% endfor %}
+              <div class="col-sm-3 col-sm-offset-1 col-md-offset-0 col-md-4">
+                <a class="btn btn-default btn-block" href="{{ resource.url }}" target="_blank">{{ __('Open resource') }}</a>
+              </div>
+            </div>
+            </div>
           </div>
+          {% endfor %}
+        </div>
         {% endfor %}
       </div>
     </div>
   </div>
-{% endblock %}
+  {% endblock %}

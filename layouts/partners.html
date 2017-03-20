@@ -8,11 +8,13 @@
       <div class="col-md-5 col-md-offset-2">
         <h2 class="hidden-xs hidden-sm header-page">{{ __(title) }}</h2>
         {{ contents | safe }}
+        <div class="partners-container">
         {% for partner in external %}
           <div class="partner-person">
+              <hr>
               <h4>
                 {{ partner.name }}
-                <span class="partner-role"> ({{ partner.country }})</span>
+                <span class="partner-role"> {{ partner.country }}</span>
               </h4>
               {% if partner.url %}
                 <h5 class="partner-url">
@@ -24,6 +26,7 @@
               </p>
           </div>
         {% endfor %}
+        </div>
       </div>
     </div>
   </div>

@@ -120,7 +120,7 @@ p em {
 }
 
 .btn {
-  border-radius: 14px;
+  border-radius: 100px;
   text-transform: capitalize;
   font-weight: 600;
   border: 1px solid #E6142D;
@@ -130,7 +130,6 @@ p em {
 
 .btn:hover, .btn:focus, .btn:active, .btn-default:active:hover {
   background-color: #FBFBFB;
-  border-radius: 14px;
   text-transform: capitalize;
   font-weight: 600;
   border: 1px solid #E6142D;
@@ -146,6 +145,14 @@ p em {
 .btn.active.focus {
   outline: 0px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+  box-shadow:none;
+}
+
+.left, .right{
+  font-size: 14px;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
 }
 
 .hamburger{
@@ -293,7 +300,8 @@ p em {
 
 .latest-news-btn-group,
 .archive-news-btn-group{
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .last-news-container{
@@ -391,7 +399,7 @@ p em {
 
 .news-category, .last-news-category {
   font-family: 'hk_grotesk', sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   color: #E6142D;
   text-transform: uppercase;
   line-height: 12px;
@@ -452,12 +460,17 @@ margin-right: 27px;
   text-decoration: none;
 }
 
+.archive-news-btn-group{
+  padding-bottom: 50px;
+}
+
 /* calendar*/
 
 .event-date{
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  padding-right: 100px;
 }
 
 .event-info-link{
@@ -474,6 +487,29 @@ margin-right: 27px;
 
 .event-container{
   flex-direction: column;
+  border-top: 1px solid #EEEEEE;
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+.month {
+  font-size: 18px;
+  color: #F62837;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+
+/* resources */
+.resources-archive {
+  padding-top: 54px;
+}
+
+.resource-box{
+  padding-top: 27px;
+  padding-bottom: 27px;
+  border-top: 1px solid #EEEEEE;
+  margin: 0 30px 0 10px;
+  min-height: 200px;
 }
 
 /* team and partners */
@@ -486,6 +522,14 @@ margin-right: 27px;
 .team-person .team-role,
 .partner-person .partner-role{
   font-weight: normal;
+}
+
+.partner-person, .team-person{
+  margin: 27px 0 54px;
+}
+
+.partners-container, .team-container{
+  padding-top: 54px;
 }
 
 /* project */

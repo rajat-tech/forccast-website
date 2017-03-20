@@ -6,6 +6,20 @@
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-sm-6 col-md-5 col-md-offset-2 header-page">
+
+        <p class="hidden-xs">
+          <div class="pull-right archive-news-btn-group" role="group" aria-label="slide news">
+            <a type="button" class="btn btn-default left {{ '' if previous else 'disabled' }}" href="/{{ previous.path if previous }}">
+              <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
+              </span>
+            </a>
+            <a type="button" class="btn btn-default right {{ '' if next else 'disabled' }}" href="/{{ next.path if next }}">
+              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
+              </span>
+            </a>
+          </div>
+        </p>
+
         <h2>{{ title }}</h2>
         <div class="news-content">
         <p>
@@ -33,18 +47,7 @@
         <p>
           {{ media | safe }}
         </p>
-        <p class="hidden-xs">
-          <div class="btn-group pull-right archive-news-btn-group" role="group" aria-label="slide news">
-            <a type="button" class="btn btn-default {{ '' if previous else 'disabled' }}" href="/{{ previous.path if previous }}">
-              <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
-              </span>
-            </a>
-            <a type="button" class="btn btn-default {{ '' if next else 'disabled' }}" href="/{{ next.path if next }}">
-              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
-              </span>
-            </a>
-          </div>
-        </p>
+        
       </div>
     </div>
   </div>
