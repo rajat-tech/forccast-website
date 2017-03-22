@@ -663,6 +663,18 @@ margin-right: 27px;
     border-radius: 4px;
 }
 
+/* page */
+
+.notes-container{
+    position: fixed;
+    top: 0px;
+    background: #F6F6F6;
+    height: 100vh;
+    overflow-y: scroll;
+    transform: none;
+    padding-top: 52px;
+}
+
 /* utilities */
 
 mark{

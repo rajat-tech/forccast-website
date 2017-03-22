@@ -1,0 +1,10 @@
+{
+  "external_md": "data/controversies_fr.md",
+  "meta":{
+    "title": "controversies",
+    "level": 0,
+    "layout": "page.html",
+    "sort": 2,
+    "collection": "pages"
+  }
+}

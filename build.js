@@ -1,5 +1,7 @@
 var metalsmith = require('metalsmith'),
-    markdown = require('metalsmith-markdown'),
+    //markdown = require('metalsmith-markdown'),
+    markdown = require('metalsmith-markdownit'),
+    mdfootnotes = require('markdown-it-footnote'),
     layouts = require('metalsmith-layouts'),
     permalinks = require('metalsmith-permalinks'),
     collections = require('metalsmith-collections'),
@@ -14,10 +16,12 @@ var metalsmith = require('metalsmith'),
     uglify = require('metalsmith-uglify'),
     excerpts = require('metalsmith-excerpts'),
     fromjsontocollection = require('./fromjsontocollection.js'),
+    parsefootnotes = require('./parsefootnotes.js'),
     bower = require('./bowerassets.js'),
     moment = require('moment'),
     nunjucks = require('nunjucks'),
     dateFilter = require('./datefilter');
+
 
 var env = nunjucks.configure('layouts', {watch: false,  noCache: true})
 env.addFilter('date',dateFilter);
@@ -75,6 +79,7 @@ metalsmith(__dirname)
   .destination('./build')
   .clean(true)
   .use(fromjsontocollection())
+  .use(parsefootnotes())
   .use(collections({
     news_en: {
       pattern: 'news/**/*_en.md',
@@ -125,7 +130,8 @@ metalsmith(__dirname)
     locales: ['fr', 'en'],
     directory: 'locales'
   }))
-  .use(markdown())
+  //.use(markdown())
+  .use(markdown('default', {typographer: true, html: true}).use(mdfootnotes))
   .use(permalinks({
     relative: false,
     linksets: [{

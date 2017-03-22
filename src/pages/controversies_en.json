@@ -1,0 +1,8 @@
+{
+  "external_md": "data/controversies_en.md",
+  "meta": {
+    "title": "controversies",
+    "layout": "page.html",
+    "collection": "pages"
+  }
+}

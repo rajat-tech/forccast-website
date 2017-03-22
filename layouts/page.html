@@ -7,12 +7,15 @@
       {% include "partials/sidebar.html" %}
       <div class="col-sm-6 col-md-5 col-md-offset-2">
         <h2 class="hidden-xs hidden-sm header-page">{{ __(title) }}</h2>
-        {{ contents | safe }}
+        <div class="hidden-xs">
+          {{ contents | safe }}
+        </div>
+        <div class="visible-xs">
+          {{ mobile | safe }}
+        </div>
       </div>
-      <div class="col-sm-6 col-md-5 hidden-xs">
-        <p>
-          notes
-        </p>
+      <div class="col-sm-6 col-md-5 col-md-offset-7 hidden-xs notes-container">
+        {{footnotes | safe }}
       </div>
     </div>
   </div>

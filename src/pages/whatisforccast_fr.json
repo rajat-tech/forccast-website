@@ -1,0 +1,10 @@
+{
+  "external_md": "data/whatisforccast_fr.md",
+  "meta":{
+    "title": "what is forccast?",
+    "level": 0,
+    "layout": "page.html",
+    "sort": 1,
+    "collection": "pages"
+  }
+}
