@@ -5,9 +5,9 @@
   <div class="container-fluid">
     <div class="row">
       {% include "partials/sidebar.html" %}
-      <div class="col-md-5 col-md-offset-2">
+      <div class="col-lg-6 col-md-8 col-sm-12 col-md-offset-2">
         <h2 class="hidden-xs hidden-sm header-page">{{ __(title) }}</h2>
-        {{ contents | safe }}
+        <div class="intro-text">{{ contents | safe }}</div>
         {% for row in external | batch(2) %}
       </div>
     </div>

@@ -11,6 +11,7 @@
 	"team": "Équipe",
 	"next": "page suivante",
 	"previous": "page précédente",
+	"prev": "page précédente",
 	"read more": "savoir plus",
 	"search": "chercher",
 	"expand": "plier",
@@ -30,5 +31,5 @@
 	"no results, sorry!": "pas des results",
 	"forccast": "forccast",
 	"course": "course",
-	"Open resource": "Open resource"
+	"Open resource": "ouvrir"
 }

@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="row">
       {% include "partials/sidebar.html" %}
-      <div class="col-sm-6 col-md-5 col-md-offset-2 header-page">
+      <div class="col-sm-7 col-md-5 col-md-offset-2 header-page">
 
         <p class="hidden-xs">
           <div class="pull-right archive-news-btn-group" role="group" aria-label="slide news">
@@ -25,25 +25,12 @@
         <p>
           <small>Published by {{ author }} on {{ date | date("DD MMM YYYY", locale) }}</small>
         </p>
-        <p>
-          <small>Filed under</small> <span class="news-category">{{ categories | join(' · ')}}</span>
-        </p>
+          <div class="news-category-container"><small>Filed under</small> <span class="news-category">{{ categories | join(' · ')}}</span></div>
         {{ contents | safe }}
         </div>
-        <div class="visible-xs">
-          <div class="btn-group pull-right archive-news-btn-group" role="group" aria-label="slide news">
-            <a type="button" class="btn btn-default {{ '' if previous else 'disabled' }}" href="/{{ previous.path if previous }}">
-              <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
-              </span>
-            </a>
-            <a type="button" class="btn btn-default {{ '' if next else 'disabled' }}" href="/{{ next.path if next }}">
-              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
-              </span>
-            </a>
-          </div>
-        </div>
+
       </div>
-      <div class="col-sm-6 col-md-5 hidden-xs col-md-offset-7 fixed-rightbar">
+      <div class="col-sm-5 col-sm-offset-7 col-md-5 col-md-offset-7 hidden-xs fixed-rightbar">
         <p>
           {{ media | safe }}
         </p>
