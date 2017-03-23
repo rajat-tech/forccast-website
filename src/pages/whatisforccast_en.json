@@ -4,6 +4,7 @@
     "title": "what is forccast?",
     "level": 0,
     "layout": "page.html",
-    "collection": "pages"
+    "collection": "pages",
+    "customjs": "footnotes.js"
   }
 }

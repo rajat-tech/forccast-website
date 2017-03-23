@@ -5,6 +5,7 @@
     "level": 0,
     "layout": "page.html",
     "sort": 2,
-    "collection": "pages"
+    "collection": "pages",
+    "customjs": "footnotes.js"
   }
 }

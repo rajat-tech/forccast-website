@@ -33,6 +33,12 @@ function plugin(options){
         var result = md.render(external_md);
         var $ = cheerio.load(result)
         $('iframe').addClass('news-desk embed-responsive-item')
+
+        $('.footnote-item').each(function(i,elem){
+          var link = $(this).find('.footnote-backref');
+          link.prependTo(this)
+        })
+
         var notes = $('.footnotes').html();
         $('.footnotes-sep').remove()
         $('.footnotes').remove()
@@ -47,13 +53,20 @@ function plugin(options){
             var id = $(this).attr('id');
             var title = $(this).find('h4').clone()
             var collapser = $('<div class="show-note-button" data-toggle="collapse" data-target="#' + id +'" aria-expanded="false" aria-controls="' + id +'"></div>')
-            title.wrap(collapser)
+            if(title.text()){
+              title.wrap(collapser)
+            }else{
+              $('<h4>note ' + (i+1) + '</h4>').wrap(collapser)
+            }
+
             $(this).find('h4').remove()
             var collapsed = $('<div class="collapse show-note-content" id="' + id +'">' + $(this).html() +'</div>')
             $('.footnote-ref a[href=#' + id +']').parent().parent().after(collapser)
             collapser.after(collapsed)
           });
+          $('.footnote-ref a').removeAttr('href')
           $('.footnotes').remove()
+          $('.footnote-backref').remove()
           mobile = $.html()
         }else {
           mobile = desktop;

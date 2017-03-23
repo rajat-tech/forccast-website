@@ -745,6 +745,23 @@ a {
     padding-top: 52px;
 }
 
+.notes-container .footnote-item :nth-child(2){
+  display: initial;
+}
+
+.notes-container .footnote-item{
+  background-color: #F6F6F6;
+}
+
+.notes-container .footnote-item.active-footnotes{
+  animation: pulsate 3s;
+}
+
+@keyframes pulsate {
+0% {background-color: #F6F6F6;}
+50% {background-color: red;}
+100% {background-color: #F6F6F6;}
+}
 /* utilities */
 
 mark{
@@ -772,7 +789,7 @@ mark{
 }
 
 .intro-text{
-  margin-top: 54px; 
+  margin-top: 54px;
 }
 
 /* tablet vertical */
@@ -977,7 +994,7 @@ h2{
 }
 
 .intro-text{
-  margin-top: 0px; 
+  margin-top: 0px;
 }
 
 }
