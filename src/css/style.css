@@ -757,6 +757,12 @@ a {
   animation: pulsate 3s;
 }
 
+@keyframes pulsate {
+  0% {background-color: #F6F6F6;}
+  50% {background-color: #E6142D;}
+  100% {background-color: #F6F6F6;}
+}
+
 .footnote-ref a{
   color: #E6142D;
   letter-spacing: 1px;
@@ -851,11 +857,6 @@ a {
   padding: 0px 15px 10px;
 }
 
-@keyframes pulsate {
-0% {background-color: #F6F6F6;}
-50% {background-color: #E6142D;}
-100% {background-color: #F6F6F6;}
-}
 /* utilities */
 
 mark{
