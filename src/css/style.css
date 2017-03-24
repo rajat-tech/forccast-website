@@ -742,7 +742,7 @@ a {
     height: 100vh;
     overflow-y: scroll;
     transform: none;
-    padding-top: 52px;
+    padding-top: 45px;
 }
 
 .notes-container .footnote-item :nth-child(2){
@@ -757,9 +757,103 @@ a {
   animation: pulsate 3s;
 }
 
+.footnote-ref a{
+  color: #E6142D;
+  letter-spacing: 1px;
+}
+
+.footnote-ref a:hover{
+  text-decoration: none;
+
+}
+.footnote-item{
+  margin-top: 15px;
+}
+
+.footnote-item h4{
+  color: #E6142D;
+  font-size: 17px;
+}
+
+.footnote-item .footnote-backref{
+  margin-right: 5px;
+  color: #E6142D;
+}
+
+.footnotes-list li {
+    counter-increment: step-counter;
+}
+
+.footnotes-list {
+    margin-left: 0;
+    padding-right: 5px;
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+.footnotes-list li::before {
+    content: counter(step-counter);
+    color: #E6142D;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.show-note-button{
+  border-top: 1px solid #E6142D;
+  border-bottom: 1px solid #E6142D;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 0px 15px;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.show-note-button[aria-expanded="true"]{
+    border-bottom: 0px;
+}
+
+.show-note-button{
+    counter-increment: step-counter;
+}
+
+.show-note-button h4::before {
+    content: counter(step-counter);
+    color: #E6142D;
+    margin-right: 5px;
+    font-style: normal;
+    font-size: 17px;
+}
+
+.show-note-button h4::after {
+    content: '+';
+    color: #E6142D;
+    font-style: normal;
+    font-size: 17px;
+    position: absolute;
+    right: 20px;
+}
+
+.show-note-button[aria-expanded="true"] h4::after {
+    content: '-';
+}
+
+.show-note-button h4{
+  color: #E6142D;
+  font-size: 17px;
+  margin: 3px 0px;
+}
+
+.show-note-content{
+  border-bottom: 1px solid #E6142D;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 10px;
+  padding: 0px 15px 10px;
+}
+
 @keyframes pulsate {
 0% {background-color: #F6F6F6;}
-50% {background-color: red;}
+50% {background-color: #E6142D;}
 100% {background-color: #F6F6F6;}
 }
 /* utilities */
