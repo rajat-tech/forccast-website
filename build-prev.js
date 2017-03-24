@@ -1,5 +1,4 @@
 var metalsmith = require('metalsmith'),
-    //markdown = require('metalsmith-markdown'),
     markdown = require('metalsmith-markdownit'),
     mdfootnotes = require('markdown-it-footnote'),
     layouts = require('metalsmith-layouts'),
@@ -130,7 +129,6 @@ metalsmith(__dirname)
     locales: ['fr', 'en'],
     directory: 'locales'
   }))
-  //.use(markdown())
   .use(markdown('default', {typographer: true, html: true}).use(mdfootnotes))
   .use(permalinks({
     relative: false,
@@ -153,16 +151,6 @@ metalsmith(__dirname)
     pattern: '**/*.html',
     directory: 'layouts'
   }))
-  .use(serve({
-    port: 8081,
-    verbose: true
-  }))
-  .use(watch({
-      paths: {
-        "${source}/**/*": true,
-        "layouts/**/*": "**/*"
-      }
-    }))
   .use(ignore('**/\.DS_Store'))
   .use(bower({path:'./assets'}))
   .build(function (err, files) {
@@ -170,7 +158,6 @@ metalsmith(__dirname)
       console.log(err);
     }
     else {
-      //console.log(files)
-      console.log('Forccast built!');
+      console.log("ok");
     }
   });
