@@ -21,6 +21,7 @@ $( document ).ready(function() {
       if(scroll < ($('.last-news-container')[0].scrollWidth - $('.last-news-container').width())){
         $('.latest-news-btn-group > .right').removeClass('disabled')
       }
+      $('.last-news-container').stop();
       $('.last-news-container').animate({scrollLeft: scroll }, '500');
       if(scroll<0){
         $(this).addClass('disabled')
@@ -36,6 +37,7 @@ $( document ).ready(function() {
       if(scroll>0){
         $('.latest-news-btn-group > .left').removeClass('disabled')
       }
+      $('.last-news-container').stop();
       $('.last-news-container').animate({scrollLeft: scroll }, '500');
       if(scroll>= ($('.last-news-container')[0].scrollWidth - $('.last-news-container').width())){
         $(this).addClass('disabled');
