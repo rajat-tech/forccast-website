@@ -593,20 +593,13 @@ a {
 }
 
 /* project */
-.expand-details:before {
-  content:'';
+
+.expand-detail .glyphicon:before {
+  content: "\002b";
 }
 
-.expand-details .glyphicon:before {
-  content:'expand';
-}
-
-.expand-details[aria-expanded="true"]:before {
-  content:'';
-}
-
-.expand-details[aria-expanded="true"] .glyphicon:before {
-  content:'collapse';
+.expand-detail[aria-expanded="true"] .glyphicon:before {
+  content: "\2212";
 }
 
 .filters-container{
