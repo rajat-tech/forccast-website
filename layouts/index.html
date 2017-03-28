@@ -2,7 +2,7 @@
 {% block body %}
   {% include "partials/nav-mobile.html" %}
   {% include "partials/sidebar-mobile.html" %}
-  <div class="container-fluid">
+  <div class="container-fluid home-margin">
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-md-10 col-md-offset-2 home-container">
@@ -34,7 +34,7 @@
                 <p class="last-news-date">
                   {{ news.date | date("DD MMM YYYY", locale) }}
                 </p>
-                <h4><a href="/{{ news.path }}">{{ news.title }}</a></h4>
+                <h4><a href="/{{ news.path }}">{{ news.title | truncate(50) }}</a></h4>
                 <p class="last-news-category">
                   {{ news.categories | join(' · ')}}
                 </p>

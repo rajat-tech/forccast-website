@@ -235,6 +235,7 @@ a {
 .sidemenu-logo{
   padding-bottom: 27px;
   margin-top: 18px;
+  min-height: 165px;
 }
 
 .sidemenu-logo p{
@@ -335,6 +336,9 @@ a {
   padding-top: 22px;
 }
 
+.home-margin{
+  margin-top: 0px;
+}
 
 .latest-news{
   display: inline-block;
@@ -366,7 +370,7 @@ a {
 
 /*home*/
 .home-container{
-  display: flex;
+  display: block;
   flex-direction: column;
   height: 100vh;
 }
@@ -378,7 +382,9 @@ a {
   background-repeat: no-repeat;
   background-color: #E6142D;
   background-image: url("../media/cover_forccast.jpg");
-  /*padding: 150px 0 50px;*/
+  padding: 50px 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .home-intro p{
@@ -893,6 +899,9 @@ h2{
   margin-bottom: 100px;
 }
 
+.home-container {
+    display: flex;
+}
 
 .left, .right{
   font-size: 14px;
@@ -1007,6 +1016,15 @@ h2{
   margin-top: 20px;
 }
 
+.home-intro{
+  padding: 30% 0 0 0;
+}
+
+.home-margin{
+  margin-top: -50px;
+}
+
+
 }
 
 
@@ -1019,6 +1037,19 @@ h2{
 
   .last-news{
     width: 30%;
+  }
+
+  .home-margin{
+    margin-top: 0px;
+  }
+
+  .home-news h2{
+    font-size: 22px;
+  }
+
+  .last-news h4 {
+    font-size: 14px;
+    line-height: 17px;
   }
 
   .img-order-1{
@@ -1042,7 +1073,7 @@ h2{
   }
 
   .sidemenu-logo p {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 14px;
   }
 
@@ -1054,7 +1085,7 @@ h2{
   }
 
   .home-intro {
-    /*padding: 150px 0 120px;*/
+    padding: 183px 0 0 0;
 }
 
   .header-page {
@@ -1085,6 +1116,10 @@ h2{
   margin-top: 0px;
 }
 
+.last-news {
+    padding: 15px 30px 15px 15px;
+}
+
 }
 
 /* desktop */
@@ -1096,13 +1131,7 @@ h2{
   }
 
   .home-intro {
-    flex-grow: 1;
-    background-position: top left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #E6142D;
-    background-image: url(../media/cover_forccast.jpg);
-    /*padding: 243px 0 160px;*/
+    padding: 183px 0 0 0;
   }
 
   .home-intro p{
@@ -1114,6 +1143,19 @@ h2{
 
   .home-intro a{
     margin-left: 15px;
+  }
+
+  .home-news h2{
+    font-size: 27px;
+  }
+
+  .last-news h4 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .last-news {
+      padding: 15px 30px 45px 15px;
   }
 
   .sidemenu-1{
