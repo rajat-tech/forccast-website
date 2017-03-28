@@ -12,6 +12,9 @@
   </title>
   <meta name="description" content="{% if excerpt %}{{ excerpt | striptags() | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
   <meta name="author" content="{{site.author}}">
+  <dc:title>{{site.name}}</dc:title>
+  <dc:creator>{{site.author}}</dc:creator>
+  <dc:description>{{ site.description }}</dc:description>
   <!-- CSS -->
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/bootstrap.css">
