@@ -23,9 +23,9 @@
         <h2>{{ title }}</h2>
         <div class="news-content">
         <p>
-          <small>Published by {{ author }} on {{ date | date("DD MMM YYYY", locale) }}</small>
+          <small>{{ __('published by') }} {{ author }} on {{ date | date("DD MMM YYYY", locale) }}</small>
         </p>
-          <div class="news-category-container"><small>Filed under</small> <span class="news-category">{{ categories | join(' · ')}}</span></div>
+          <div class="news-category-container"><small>{{ __('filed under') }}</small> <span class="news-category">{{ categories | join(' · ')}}</span></div>
         {{ contents | safe }}
         </div>
 

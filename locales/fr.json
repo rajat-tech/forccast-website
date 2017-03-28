@@ -26,10 +26,12 @@
 	"link to resource": "lien vers la ressource",
 	"add to calendar": "Ajouter au calendrier",
 	"What is forccast?": "What is forccast?",
-	"link to resources": "link to resources",
+	"link to resources": "lien vers les ressources",
 	"no events": "pas d'événements",
 	"no results, sorry!": "pas des results",
 	"forccast": "forccast",
 	"course": "course",
-	"Open resource": "ouvrir"
+	"Open resource": "ouvrir",
+	"published by": "par",
+	"filed under": "catégories"
 }
