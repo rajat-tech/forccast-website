@@ -19,7 +19,9 @@ var metalsmith = require('metalsmith'),
     bower = require('./bowerassets.js'),
     moment = require('moment'),
     nunjucks = require('nunjucks'),
-    dateFilter = require('./datefilter');
+    dateFilter = require('./datefilter'),
+    ghpages = require('gh-pages'),
+    path = require('path');
 
 
 var env = nunjucks.configure('layouts', {watch: false,  noCache: true})
@@ -69,7 +71,7 @@ metalsmith(__dirname)
     site: {
       name: 'Forccast',
       url: 'https://www.forccast.fr',
-      baseurl: '/',
+      baseurl: '/forccast-website/',
       author: 'Forccast team',
       description: 'Formation par la cartographie des controverses à l\'analyse des sciences et des techniques'
     }
@@ -158,6 +160,13 @@ metalsmith(__dirname)
       console.log(err);
     }
     else {
-      console.log("ok");
+      console.log("ok, publishing on gh-pages...");
+      ghpages.publish(path.join(__dirname, 'build'), function(err) {
+        if(err){
+          console.log(err)
+        }else{
+          console.log("published!")
+        }
+      });
     }
   });

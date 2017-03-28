@@ -26,7 +26,7 @@
           <p class="news-date">
             {{ news.date | date("DD MMM YYYY", locale) }}
           </p>
-          <a href="/{{ news.path }}">
+          <a href="{{site.baseurl}}{{ news.path }}">
             <h4>{{ news.title }}</h4>
           </a>
           <p class="news-category">
@@ -41,11 +41,11 @@
       <div class="col-md-12">
           <p class="pagination">
             <div class="archive-news-btn-group" role="group" aria-label="slide news">
-              <a type="button" class="btn btn-default {{ '' if pagination.previous else 'disabled' }}" href="/{{ pagination.previous.path if pagination.previous }}">
+              <a type="button" class="btn btn-default {{ '' if pagination.previous else 'disabled' }}" href="{{site.baseurl}}{{ pagination.previous.path if pagination.previous }}">
                 <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
                 </span> {{ __("next") }}
               </a>
-              <a type="button" class="btn btn-default {{ '' if pagination.next else 'disabled' }}" href="/{{ pagination.next.path if pagination.next }}">
+              <a type="button" class="btn btn-default {{ '' if pagination.next else 'disabled' }}" href="{{site.baseurl}}{{ pagination.next.path if pagination.next }}">
                 {{ __("prev") }} <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
                 </span>
               </a>

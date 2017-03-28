@@ -9,11 +9,11 @@
 
         <p class="hidden-xs">
           <div class="pull-right archive-news-btn-group" role="group" aria-label="slide news">
-            <a type="button" class="btn btn-default left {{ '' if previous else 'disabled' }}" href="/{{ previous.path if previous }}">
+            <a type="button" class="btn btn-default left {{ '' if previous else 'disabled' }}" href="{{site.baseurl}}{{ previous.path if previous }}">
               <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
               </span>
             </a>
-            <a type="button" class="btn btn-default right {{ '' if next else 'disabled' }}" href="/{{ next.path if next }}">
+            <a type="button" class="btn btn-default right {{ '' if next else 'disabled' }}" href="{{site.baseurl}}{{ next.path if next }}">
               <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">
               </span>
             </a>
@@ -34,7 +34,7 @@
         <p>
           {{ media | safe }}
         </p>
-        
+
       </div>
     </div>
   </div>
