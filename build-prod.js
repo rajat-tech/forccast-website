@@ -13,6 +13,7 @@ var metalsmith = require('metalsmith'),
     assets = require('metalsmith-assets'),
     ignore = require('metalsmith-ignore'),
     uglify = require('metalsmith-uglify'),
+    prefixoid = require('metalsmith-prefixoid'),
     excerpts = require('metalsmith-excerpts'),
     fromjsontocollection = require('./fromjsontocollection.js'),
     parsefootnotes = require('./parsefootnotes.js'),
@@ -149,6 +150,9 @@ metalsmith(__dirname)
     engine: 'nunjucks',
     pattern: '**/*.html',
     directory: 'layouts'
+  }))
+  .use(prefixoid({
+    meta: 'site.baseurl'
   }))
   .use(ignore('**/\.DS_Store'))
   .use(bower({path:'./assets'}))
