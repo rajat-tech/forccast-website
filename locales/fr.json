@@ -1,9 +1,9 @@
 {
 	"intro": "Accueil",
-	"projects": "Projets",
-	"controversies": "Controverses",
+	"projects": "Archives",
+	"controversies": "Qu'est-ce qu'une controverse ?",
 	"resources": "Ressources",
-	"what is forccast?": "Qu'est-ce que FORCCAST?",
+	"what is forccast?": "Qu'est-ce que FORCCAST ?",
 	"news": "Nouvelles",
 	"latest news": "Derniers articles",
 	"partners": "Partenaires",
@@ -31,7 +31,7 @@
 	"no results, sorry!": "pas de resultats, désolé !",
 	"forccast": "forccast",
 	"course": "cours",
-	"Open resource": "ouvrir la ressource",
+	"Open resource": "ouvrir",
 	"published by": "publié par",
 	"filed under": "catégories"
 }
