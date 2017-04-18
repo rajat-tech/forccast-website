@@ -378,6 +378,27 @@ a {
   border-bottom: 1px solid #cacaca;
 }
 
+/* static */
+.static a {
+    border-bottom: 1px #E6142D solid;
+    color: #000;
+    opacity: 0.8;
+}
+
+.static a:hover {
+  text-decoration: none;
+}
+
+.static .footnote-ref a{
+  border-bottom: none;
+}
+
+.static h3{
+  font-weight: 600;
+  font-size: 22px;
+  margin-top: 30px;
+}
+
 /*home*/
 .home-container{
   display: block;
@@ -492,6 +513,11 @@ a {
   line-height: 20px;
 }
 
+.last-news h4 .truncate-readmore{
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
 .news-box a, .last-news a{
   color: #000;
   opacity: 0.7;
@@ -559,6 +585,7 @@ a {
 
 .event-info{
   flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .event-container{
@@ -573,6 +600,10 @@ a {
   color: #F62837;
   line-height: 12px;
   text-transform: uppercase;
+}
+
+.month:not(:first-of-type){
+  margin-top: 50px;
 }
 
 /* resources */
@@ -984,6 +1015,7 @@ h2{
   .event-info-link{
     display: flex;
     flex-shrink: 1;
+    flex-grow: 1;
   }
 
   .event-container{
@@ -1143,6 +1175,10 @@ h2{
 
 .last-news {
     padding: 15px 30px 15px 15px;
+}
+
+.notes-container{
+  padding-top: 165px;
 }
 
 }
