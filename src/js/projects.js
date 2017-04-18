@@ -60,6 +60,7 @@ $( document ).ready(function() {
   });
 
   $('.institutions-container button').on('click', function() {
+
     var value = $(this).val();
     var check = filters.filter(function(d){
       return d.value == value;
@@ -99,6 +100,7 @@ $( document ).ready(function() {
     var selected = projectList.matchingItems;
     var selectableTags = new Map();
     var selectableInstitutions = new Map();
+
     selected.forEach(function(d){
       var tags = $(d.elm).find('.search-tags').text()
       tags = tags.split('·');
@@ -118,7 +120,7 @@ $( document ).ready(function() {
     var allInstitutionsButtons = $('.institutions-container button')
 
     allTagsButtons.each(function(){
-      var value = $(this).val();
+      var value = $(this).val().trim();
       if(Array.from(selectableTags.values()).indexOf(value)< 0){
         $(this).prop('disabled', true)
       }else{
@@ -127,7 +129,7 @@ $( document ).ready(function() {
     })
 
     allInstitutionsButtons.each(function(){
-      var value = $(this).val();
+      var value = $(this).val().trim();
       if(Array.from(selectableInstitutions.values()).indexOf(value)< 0){
         $(this).prop('disabled', true)
       }else{

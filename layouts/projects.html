@@ -33,7 +33,9 @@
                 </p>
               </div>
               <div class="col-xs-2 col-sm-4">
-                <img src="{{site.baseurl}}media/placeholder.png" class="hidden-xs"/>
+                {% if project.project_image_url %}
+                <img src="{{project.project_image_url}}" class="hidden-xs"/>
+                {% endif %}
                   <div class="visible-xs">
                     <span class="glyphicon" aria-hidden="true"></span>
                   </div>
@@ -42,10 +44,9 @@
             </div>
             <div class="row collapse" id="details-{{loop.index}}">
               <div class="col-sm-4">
-                <h6>{{__('course')}}</h6>
+                <h6>{{__('year')}}</h6>
                 <p class="search-course">
-                  {{ project.course_title }}
-                  ({{ project.from_date}}{% if project.from_date != project.to_date %} - {{project.to_date}}{% endif %})
+                  {{ project.from_date}}{% if project.from_date != project.to_date %} - {{project.to_date}}{% endif %}
                 </p>
                 {% if project.tutors %}
                 <h6>{{__('tutors')}}</h6>
@@ -103,11 +104,11 @@
             <input type="text" class="form-control" id="project-search" placeholder="{{__('search')}}">
           </div>
           {% for typology in external.meta.typology %}
-          <div class="checkbox">
+          <!-- <div class="checkbox">
             <label>
               <input type="checkbox" value="{{typology.value}}" checked> {{typology.label}}
             </label>
-          </div>
+          </div> -->
           {% endfor %}
           <div class="institutions-container">
             <h4>{{__('institutions')}}</h4>
@@ -115,12 +116,14 @@
             <button type="button" class="btn btn-default btn-xs filter-pills" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ institution.label }}">{{ institution.label }}</button>
             {% endfor %}
           </div>
+          {% if external.meta.tags|length %}
           <div class="tags-container">
             <h4>{{__('tags')}}</h4>
             {% for tag in external.meta.tags %}
             <button type="button" class="btn btn-default btn-xs filter-pills" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ tag.label }}">{{ tag.label }}</button>
             {% endfor %}
           </div>
+          {% endif %}
         </form>
       </div>
     </div>

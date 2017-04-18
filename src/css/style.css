@@ -252,6 +252,16 @@ a {
   text-transform: uppercase;
 }
 
+.sidemenu-logo h1 a{
+  color: #E6142D;
+  text-decoration: none;
+}
+
+.sidemenu-logo h1 a:hover{
+  color: #E6142D;
+  text-decoration: none;
+}
+
 .sidemenu-1{
   font-family: 'Titillium Web', Arial, sans-serif;
   font-weight: 600;
@@ -596,6 +606,21 @@ a {
 
 .partners-container, .team-container{
   padding-top: 54px;
+}
+
+.partner-url a{
+  color: #F62837;
+  text-decoration: none;
+}
+
+.partner-url a:hover{
+  color: #F62837;
+  text-decoration: none;
+}
+
+.partner-url{
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 /* project */

@@ -1,7 +1,7 @@
 {% block sidebar %}
   <div class="col-md-2 hidden-xs hidden-sm fixed-sidemenu">
     <div class="sidemenu-logo">
-     <h1>{{ site.name }}</h1>
+     <h1><a href="{{ site.baseurl if locale === defaultLocale else site.baseurl+locale }}">{{ site.name }}</a></h1>
      <p>
        Formation par la cartographie<br>
        des controverses à l'analyse<br>

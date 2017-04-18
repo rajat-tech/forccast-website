@@ -1,5 +1,5 @@
 ---
-title: "projects"
+title: "studies"
 layout: projects.html
 level: 0
 sort: 3

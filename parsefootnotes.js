@@ -56,7 +56,7 @@ function plugin(options){
             if(title.text()){
               title.wrap(collapser)
             }else{
-              $('<h4>note ' + (i+1) + '</h4>').wrap(collapser)
+              $('<h4>note</h4>').wrap(collapser)
             }
 
             $(this).find('h4').remove()
