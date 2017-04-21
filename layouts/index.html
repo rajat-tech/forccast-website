@@ -6,8 +6,9 @@
     <div class="row">
       {% include "partials/sidebar.html" %}
       <div class="col-md-10 col-md-offset-2 home-container">
-
+        <img src="{{site.baseurl}}media/idefi.png" class="idefi"/>
         <div class="row home-intro">
+
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
             {{ contents | safe }}
             <a href="{{site.baseurl}}{{locale}}/what-is-forccast">{{ __('read more') }}</a>
@@ -34,7 +35,7 @@
                 <p class="last-news-date">
                   {{ news.date | date("DD MMM YYYY", locale) }}
                 </p>
-                <h4><a href="{{site.baseurl}}{{ news.path }}">{{ news.title | truncate(50) }}</a></h4>
+                <h4><a href="{{site.baseurl}}{{ news.path }}">{{ news.title | truncate(50) }} <span class="home-read-more">[{{ __('read more') }}]</span></a></h4>
                 <p class="last-news-category">
                   {{ news.categories | join(' · ')}}
                 </p>

@@ -378,6 +378,13 @@ a {
   border-bottom: 1px solid #cacaca;
 }
 
+.idefi{
+  position: absolute;
+  width: 50px;
+  left: 15px;
+  top: 15px;
+}
+
 /* static */
 .static a {
     border-bottom: 1px #E6142D solid;
@@ -401,6 +408,7 @@ a {
 
 /*home*/
 .home-container{
+  position: relative;
   display: block;
   flex-direction: column;
   height: 100vh;
@@ -413,7 +421,7 @@ a {
   background-repeat: no-repeat;
   background-color: #E6142D;
   background-image: url("../media/cover_forccast.jpg");
-  padding: 50px 0;
+  padding: 100px 0 50px 0;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -447,6 +455,17 @@ a {
 .home-news h2{
   font-size: 27px;
   padding-left: 0px;
+}
+
+.home-read-more{
+  font-family: 'hk_grotesk', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  padding-bottom: 2px;
+}
+
+.last-news a:hover .home-read-more{
+  color: #E6142D;
 }
 
 .navbar-header{
@@ -959,6 +978,14 @@ h2{
     display: flex;
 }
 
+.idefi{
+  position: absolute;
+  width: 70px;
+  right: 15px!important;
+  left: auto;
+  top: 75px;
+}
+
 .left, .right{
   font-size: 14px;
   width: 40px;
@@ -1094,6 +1121,14 @@ h2{
 
   .last-news{
     width: 30%;
+  }
+
+  .idefi{
+    position: absolute;
+    width: 90px;
+    right: 15px!important;
+    left: auto;
+    top: 15px;
   }
 
   .home-margin{
