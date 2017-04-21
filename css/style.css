@@ -378,8 +378,37 @@ a {
   border-bottom: 1px solid #cacaca;
 }
 
+.idefi{
+  position: absolute;
+  width: 50px;
+  left: 15px;
+  top: 15px;
+}
+
+/* static */
+.static a {
+    border-bottom: 1px #E6142D solid;
+    color: #000;
+    opacity: 0.8;
+}
+
+.static a:hover {
+  text-decoration: none;
+}
+
+.static .footnote-ref a{
+  border-bottom: none;
+}
+
+.static h3{
+  font-weight: 600;
+  font-size: 22px;
+  margin-top: 30px;
+}
+
 /*home*/
 .home-container{
+  position: relative;
   display: block;
   flex-direction: column;
   height: 100vh;
@@ -392,7 +421,7 @@ a {
   background-repeat: no-repeat;
   background-color: #E6142D;
   background-image: url("../media/cover_forccast.jpg");
-  padding: 50px 0;
+  padding: 100px 0 50px 0;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -426,6 +455,17 @@ a {
 .home-news h2{
   font-size: 27px;
   padding-left: 0px;
+}
+
+.home-read-more{
+  font-family: 'hk_grotesk', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  padding-bottom: 2px;
+}
+
+.last-news a:hover .home-read-more{
+  color: #E6142D;
 }
 
 .navbar-header{
@@ -490,6 +530,11 @@ a {
 .news-box h4, .last-news h4{
   font-size: 18px;
   line-height: 20px;
+}
+
+.last-news h4 .truncate-readmore{
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .news-box a, .last-news a{
@@ -559,6 +604,7 @@ a {
 
 .event-info{
   flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .event-container{
@@ -573,6 +619,10 @@ a {
   color: #F62837;
   line-height: 12px;
   text-transform: uppercase;
+}
+
+.month:not(:first-of-type){
+  margin-top: 50px;
 }
 
 /* resources */
@@ -928,6 +978,14 @@ h2{
     display: flex;
 }
 
+.idefi{
+  position: absolute;
+  width: 70px;
+  right: 15px!important;
+  left: auto;
+  top: 75px;
+}
+
 .left, .right{
   font-size: 14px;
   width: 40px;
@@ -984,6 +1042,7 @@ h2{
   .event-info-link{
     display: flex;
     flex-shrink: 1;
+    flex-grow: 1;
   }
 
   .event-container{
@@ -1062,6 +1121,14 @@ h2{
 
   .last-news{
     width: 30%;
+  }
+
+  .idefi{
+    position: absolute;
+    width: 90px;
+    right: 15px!important;
+    left: auto;
+    top: 15px;
   }
 
   .home-margin{
@@ -1143,6 +1210,10 @@ h2{
 
 .last-news {
     padding: 15px 30px 15px 15px;
+}
+
+.notes-container{
+  padding-top: 165px;
 }
 
 }
