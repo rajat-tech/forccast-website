@@ -1,5 +1,5 @@
 {
-	"intro": "Intro",
+	"intro": "Home",
 	"projects": "Archives",
 	"controversies": "What is a controversy?",
 	"resources": "Resources",
@@ -33,7 +33,7 @@
 	"prev": "prev",
 	"published by": "published by",
 	"filed under": "filed under",
-	"studies": "Studies",
+	"studies": "Case studies",
 	"year": "year",
 	"external website": "External website"
 }
