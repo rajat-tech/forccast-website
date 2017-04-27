@@ -2,12 +2,12 @@
   <div class="sidemenu-1">
      <ul class="nav">
        <li class="{{ 'active' if layout == 'index.html' }}">
-         <a href="{{ site.baseurl if locale === defaultLocale else site.baseurl+locale }}">{{__('intro')}}</a>
+         <a href="{{ site.baseurl if locale === defaultLocale else site.baseurl+locale }}"><span class="nav-underline">{{__('intro')}}</span></a>
        </li>
        {% for page in pages %}
         {% if page.locale == locale and page.level == 0 %}
         <li class="{{ 'active' if page.path == path }}">
-          <a href="{{site.baseurl}}{{ page.path }}">{{__(page.title)}}</a>
+          <a href="{{site.baseurl}}{{ page.path }}"><span class="nav-underline">{{__(page.title)}}</span></a>
         </li>
         {% endif %}
        {% endfor %}
@@ -16,12 +16,12 @@
   <div class="sidemenu-2">
      <ul class="nav">
        <li class="{{ 'active' if layout == 'news-archive.html' or  layout == 'news.html'}}">
-         <a href="{{site.baseurl}}{{ locale }}/news/">{{__('news')}}</a>
+         <a href="{{site.baseurl}}{{ locale }}/news/"><span class="nav-underline">{{__('news')}}</span></a>
        </li>
        {% for page in pages %}
         {% if page.locale == locale and page.level == 1 %}
           <li class="{{ 'active' if page.path == path }}">
-            <a href="{{site.baseurl}}{{ page.path }}">{{__(page.title)}}</a>
+            <a href="{{site.baseurl}}{{ page.path }}"><span class="nav-underline">{{__(page.title)}}</span></a>
           </li>
         {% endif %}
        {% endfor %}

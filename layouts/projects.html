@@ -34,7 +34,9 @@
               </div>
               <div class="col-xs-2 col-sm-4">
                 {% if project.project_image_url %}
-                <img src="{{project.project_image_url}}" class="hidden-xs"/>
+                <a class="hidden-xs" href="{{project.website_url}}" target="_blank">
+                  <img src="{{project.project_image_url}}"/>
+                </a>
                 {% endif %}
                   <div class="visible-xs">
                     <span class="glyphicon" aria-hidden="true"></span>
