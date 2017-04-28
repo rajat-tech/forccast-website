@@ -202,6 +202,10 @@ a {
   background-color: transparent;
 }
 
+.hidden-hd{
+  display: inline-block;
+}
+
 .fixed-sidemenu {
   height: 100vh;
   overflow-y: scroll;
@@ -1382,5 +1386,14 @@ h2{
 .form-group{
   margin-top: 0;
 }
+
+}
+
+/* hd */
+@media (min-width: 1441px) {
+
+  .hidden-hd{
+    display: none;
+  }
 
 }
