@@ -272,6 +272,7 @@ a {
   font-size: 18px;
   padding-top: 27px;
   padding-bottom: 27px;
+  border-top:1px solid #EEEEEE;
 }
 
 .sidemenu-2{
@@ -280,6 +281,7 @@ a {
   font-weight: 600;
   font-size: 14px;
   padding-top: 18px;
+  border-top:1px solid #EEEEEE;
 }
 
 .sidemenu-1>.nav>li>a {
@@ -295,24 +297,9 @@ a {
   margin-bottom: 18px;
 }
 
-.sidemenu-1 .nav > li,
-.sidemenu-2 .nav > li {
-  border-bottom: 1px solid #eee;
-}
-
-.sidemenu-1 .nav > li:first-of-type,
-.sidemenu-2 .nav > li:first-of-type{
-  border-top: 1px solid #eee;
-}
-
-
 
 .nav>li>a {
   opacity: 0.7;
-}
-
-.nav>li>a>.nav-underline {
-  /*border-bottom: 1px #E6142D solid;*/
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
@@ -418,17 +405,24 @@ a {
 }
 
 /* static */
-.static a {
+.static a,
+.footnotes-list a {
     border-bottom: 1px #E6142D solid;
     color: #000;
     opacity: 0.8;
 }
 
-.static a:hover {
+.static a:hover,
+.footnotes-list a {
   text-decoration: none;
 }
 
 .static .footnote-ref a{
+  border-bottom: none;
+}
+
+.footnotes-list .footnote-backref{
+  text-decoration: none;
   border-bottom: none;
 }
 
@@ -437,6 +431,8 @@ a {
   font-size: 22px;
   margin-top: 30px;
 }
+
+
 
 /*home*/
 .home-container{
@@ -782,6 +778,8 @@ a {
   line-height: 12px;
   padding: 8px;
   margin-bottom: 4px;
+  white-space: normal;
+  text-align: left;
 }
 
 .filter-pills:hover, .filter-pills:focus, .filter-pills:active {
