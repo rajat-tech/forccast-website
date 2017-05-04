@@ -128,6 +128,7 @@ metalsmith(__dirname)
     default: 'fr',
     locales: ['fr', 'en'],
     directory: 'locales'
+  }))
   .use(markdown('default', {typographer: true, html: true}).use(mdfootnotes))
   .use(permalinks({
     relative: false,
