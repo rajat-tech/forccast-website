@@ -825,6 +825,13 @@ a {
   border: 1px solid #F62837;
 }
 
+.project-box a:hover,
+.project-box a:visited,
+.project-box a:active {
+  color: black;
+  text-decoration: none;
+}
+
 .project-box img{
   width: 100%;
 }

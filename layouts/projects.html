@@ -20,7 +20,9 @@
             <div class="row project-box">
               <div class="col-xs-12 col-sm-8">
                 <h4 class="search-title search-typology" data-typology="{{project.typology}}">
-                  {{ project.project_title }}
+                  <a href="{{project.website_url}}" target="_blank">
+                    {{ project.project_title }}
+                  </a>
                   <button type="button" class="expand-detail btn btn-default btn-circle" data-toggle="collapse" data-target="#details-{{loop.index}}" aria-expanded="false" aria-controls="details-{{loop.index}}"><i class="glyphicon"></i></button>
                 </h4>
                 <h5 class="search-institutions">
