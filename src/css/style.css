@@ -430,6 +430,10 @@ a {
   border-bottom: none;
 }
 
+.footnotes-list img{
+  max-width: 100%;
+}
+
 .static h3{
   font-weight: 600;
   font-size: 22px;
