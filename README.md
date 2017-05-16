@@ -49,6 +49,6 @@ $ node build-dev.js
 
 Once this is running, go to [http://localhost:8081/](http://localhost:8081/).
 
-### Preview and production
+### Production
 
-You can customize and run ```build-prev.js``` and ```build-prod.js```. The website will be built in ```build/``` folder.
+The push to prod script ```build-prod.js``` will execute the deployProd.bash script we need to specify depending on your production environnement. The sample provided show an example with rsync.
