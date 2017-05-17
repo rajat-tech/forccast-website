@@ -12,7 +12,7 @@
             {{ __('no events') }}
           </p>
         {% endif %}
-        {% for group, events in external | reverse | addMonthYear('start', locale) | groupby("monthYear") %}
+        {% for group, events in external | addMonthYear('start', locale) | groupby("monthYear") %}
           <h4 class="month">{{ group }}</h4>
               {% for event in events%}
                 <div class="event-container flex">
