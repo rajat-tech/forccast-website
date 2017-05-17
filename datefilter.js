@@ -19,7 +19,7 @@ var dateFilterDefaultFormat = null;
 // usage: {{ my_date | date(format) }}
 // see: <http://momentjs.com/docs/>
 function dateFilter(date, format, locale)
-{
+{;
     var result;
     var errs = [];
     var args = [];
@@ -27,7 +27,7 @@ function dateFilter(date, format, locale)
     moment.locale(locale?locale:'en');
     Array.prototype.push.apply(args, arguments);
     try {
-        obj = moment.utc(date);
+        obj = moment.utc(date).utcOffset('+02:00'); // adding an utc offset as all dates are represented (in news and in calendar) according to france timezone
     } catch (err) {
         errs.push(err);
     }
