@@ -16,6 +16,13 @@
   <meta name="DC.Title" content="{{site.name}}">
   <meta name="DC.Creator" content="{{site.author}}">
   <meta name="DC.Description" content="{{ site.description }}">
+
+  {% if favicons and favicons.html %}
+    {% for item in favicons.html %}
+      {{ item | safe}}
+    {% endfor %}
+  {% endif %}
+
   <!-- CSS -->
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="{{site.baseurl}}assets/css/bootstrap.css">

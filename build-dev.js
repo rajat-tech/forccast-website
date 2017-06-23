@@ -15,6 +15,7 @@ var metalsmith = require('metalsmith'),
     ignore = require('metalsmith-ignore'),
     uglify = require('metalsmith-uglify'),
     excerpts = require('metalsmith-excerpts'),
+    favicons = require('metalsmith-favicons'),
     fromjsontocollection = require('./fromjsontocollection.js'),
     parsefootnotes = require('./parsefootnotes.js'),
     bower = require('./bowerassets.js'),
@@ -130,7 +131,15 @@ metalsmith(__dirname)
     locales: ['fr', 'en'],
     directory: 'locales'
   }))
-  //.use(markdown())
+  .use(favicons({
+      src: 'media/forccast_favicon.png',
+      appName: 'Forccast',
+      icons: {
+        android: true,
+        appleIcon: true,
+        favicons: true
+      }
+    }))
   .use(markdown('default', {typographer: true, html: true}).use(mdfootnotes))
   .use(permalinks({
     relative: false,
