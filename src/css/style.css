@@ -676,6 +676,17 @@ a {
   flex-grow: 1;
 }
 
+.event-info a{
+    border-bottom: 1px #E6142D solid;
+    color: #000;
+    opacity: 0.8;
+}
+
+.event-info a:hover{
+  text-decoration: none;
+  opacity: 1;
+}
+
 .event-container{
   flex-direction: column;
   border-top: 1px solid #EEEEEE;
