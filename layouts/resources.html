@@ -8,31 +8,53 @@
       <div class="col-lg-6 col-md-8 col-sm-12 col-md-offset-2">
         <h2 class="hidden-xs hidden-sm header-page">{{ __(title) }}</h2>
         <div class="intro-text">{{ contents | safe }}</div>
-        {% for row in external | batch(2) %}
       </div>
     </div>
     <div class="row">
       <div class="col-md-10 col-md-offset-2 resources-archive">
-        <div class="row">
-          {% for resource in row %}
-          <div class="col-md-6">
-            <div class="row">
-              <div class="resource-box">
-              <div class="col-sm-8 col-md-8">
-                <h4>{{ resource.name }}</h4>
-                <p>
-                  {{ resource.presentation }}
-                </p>
-              </div>
-              <div class="col-sm-3 col-sm-offset-1 col-md-offset-0 col-md-4">
-                <a class="btn btn-default btn-block" href="{{ resource.url }}" target="_blank">{{ __('Open resource') }}</a>
-              </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          {% for category, items in external | groupby("category") %}
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading-{{ category | slug }}">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ category | slug }}" aria-expanded="{{"false" if loop.index > 1 else "true"}}" aria-controls="collapse-{{ category | slug }}">
+                  {{ category }}
+                </a>
+                <button type="button" class="expand-detail btn btn-default btn-circle pull-right" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ category | slug }}" aria-expanded="{{"false" if loop.index > 1 else "true"}}" aria-controls="collapse-{{ category | slug }}">
+                  <i class="glyphicon"></i>
+                </button>
+              </h4>
             </div>
+            <div id="collapse-{{ category | slug }}" class="panel-collapse collapse {{"in" if loop.index == 1 }}" role="tabpanel" aria-labelledby="heading-{{ category | slug }}">
+              <div class="panel-body">
+                {% for resource in items %}
+                <div class="resource-box">
+                <div class="row">
+                    {% if resource.url_thumbnail %}
+                    <div class="col-sm-3 col-md-4">
+                      <img src="{{resource.url_thumbnail}}"/>
+                    </div>
+                    {% endif %}
+                    <div class="{{ "col-sm-7 col-md-6" if resource.url_thumbnail else "col-sm-10 col-md-10" }}">
+                      <h4>{{ resource.name }}</h4>
+                      <p>
+                        {{ resource.presentation }}
+                      </p>
+                    </div>
+                    <div class="col-sm-2  col-md-2">
+                      <a class="btn btn-default btn-block" href="{{ resource.url }}" target="_blank">{{ __('Open resource') }}</a>
+                      {% if resource.url_download %}
+                      <a class="btn btn-default btn-block" href="{{ resource.url_download }}" target="_blank">{{ __('download') }}</a>
+                      {% endif %}
+                    </div>
+                </div>
+                </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
           {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
   </div>

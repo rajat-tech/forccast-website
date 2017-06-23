@@ -67,6 +67,23 @@ env.addFilter('split', function(str, seperator) {
     return str.split(seperator);
 });
 
+env.addFilter('slug', function(input) {
+
+  if(!input){
+    return;
+  }
+
+  input = input.toString().toLowerCase()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/&/g, '-and-')         // Replace & with 'and'
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');
+
+  return input
+});
+
 metalsmith(__dirname)
   .metadata({
     site: {
