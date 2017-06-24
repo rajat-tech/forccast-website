@@ -1071,6 +1071,10 @@ a {
   padding: 0px 15px 10px;
 }
 
+.show-note-content img{
+  max-width: 100%;
+}
+
 /* utilities */
 
 mark{
