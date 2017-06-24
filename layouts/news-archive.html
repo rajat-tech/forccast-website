@@ -41,7 +41,7 @@
     {% endfor %}
     <div class="row">
       <div class="col-md-12">
-          <p class="pagination">
+          <div class="pagination-news">
             <div class="archive-news-btn-group" role="group" aria-label="slide news">
               <a type="button" class="btn btn-default {{ '' if pagination.previous else 'disabled' }}" href="{{site.baseurl}}{{ pagination.previous.path if pagination.previous }}">
                 <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">
@@ -52,7 +52,7 @@
                 </span>
               </a>
             </div>
-          </p>
+          </div>
       </div>
     </div>
   </div>
