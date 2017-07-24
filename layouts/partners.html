@@ -24,6 +24,11 @@
               <p>
                 {{ partner.description }}
               </p>
+              {% if partner.url %}
+                {% if partner.thumbnail_url %}
+                  <a href="{{ partner.url }}" target="_blank"><img class="partner-thumbnail-image" src="{{partner.thumbnail_url}}" alt="{{partner.name}} image" /></a>
+                {% endif %}
+              {% endif %}
           </div>
         {% endfor %}
         </div>

@@ -812,6 +812,11 @@ a {
   letter-spacing: 1px;
 }
 
+.partner-thumbnail-image{
+  max-height: 10rem;
+  max-width: 10rem;
+}
+
 /* project */
 
 .expand-detail .glyphicon:before {
