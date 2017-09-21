@@ -717,7 +717,12 @@ a {
   padding-top: 54px;
 }
 
+.resource-box:hover{
+  background-color: #eee;
+}
+
 .resource-box{
+  transition: background-color 0.5s;
   padding: 10px 0px;
 }
 
