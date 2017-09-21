@@ -2,12 +2,18 @@ var path = require('path');
 var _ = require('lodash');
 var fs = require('fs');
 var mdfootnotes = require('markdown-it-footnote');
+var mila = require('markdown-it-link-attributes');
 var slug = require('slug-component');
 var cheerio = require('cheerio');
 var md = require('markdown-it')({
   html: true,
   typographer: true
-}).use(mdfootnotes)
+}).use(mdfootnotes).use(mila, {
+  pattern: /^https?:\/\//,
+  attrs: {
+    target: '_blank'
+  }
+})
 
 // Expose `plugin`.
 module.exports = plugin;
