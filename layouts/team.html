@@ -18,7 +18,7 @@
               </h4>
               {% if person.personal_url %}
                 <h5 class="team-url">
-                  {{ person.personal_url}}
+                  <a target="blank" href="{{ person.personal_url}}">{{ person.personal_url }}</a>
                 </h5>
               {% endif %}
               <p>
