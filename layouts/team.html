@@ -14,7 +14,7 @@
               <hr>
               <h4>
                 {{ person.firstname }} {{ person.lastname }}
-                <span class="team-role">{{ person.role | escape }}</span>
+                <span class="team-role">{{ person.role | replace("\\\"", "\"") }}</span>
               </h4>
               {% if person.personal_url %}
                 <h5 class="team-url">
@@ -22,7 +22,7 @@
                 </h5>
               {% endif %}
               <p>
-                {{ person.bio_html | escape }}
+                {{ person.bio_html | replace("\\\"", "\"") }}
               </p>
           </div>
         {% endfor %}
