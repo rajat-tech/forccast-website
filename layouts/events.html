@@ -23,9 +23,11 @@
                        - {{ event.end | date("DD MMM", locale)}}
                       {%endif%}
                     </h4>
+                    {% if event.hasDateTime %}
                     <p>
                       {{ event.start | date("HH:mm") }} - {{ event.end | date("HH:mm") }}
                     </p>
+                    {%endif%}
                   </div>
                   <div class="event-info-link">
                     <div class="event-info">
