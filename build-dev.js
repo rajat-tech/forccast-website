@@ -62,6 +62,15 @@ env.addFilter('addMonthYear', function(input, prop, locale) {
   return input;
 });
 
+env.addFilter('applyUtcOffset', function(input, offsetHours) {
+  if (!offsetHours || !input.length || !input) {
+    return input;
+  }
+  var date = moment(input);
+  date.hour(date.hour() - offsetHours);
+  return date.toDate();
+});
+
 env.addFilter('split', function(str, seperator) {
     return str.split(seperator);
 });
