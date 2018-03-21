@@ -3,6 +3,7 @@ $( document ).ready(function() {
   var options = {
     valueNames: [
       'search-tags',
+      'search-levels',
       'search-institutions',
       'search-title',
       'search-course',
@@ -73,6 +74,24 @@ $( document ).ready(function() {
     }else {
       filters.push({
         value: value, field: 'search-institutions'
+      })
+    }
+    projectFilter(filters)
+  });
+
+  $('.levels-container button').on('click', function() {
+    var value = $(this).val();
+    var check = filters.filter(function(d){
+      return d.value == value;
+    })
+
+    if(check.length){
+      filters = $.grep(filters, function(d){
+           return d.value != value;
+      });
+    }else {
+      filters.push({
+        value: value, field: 'search-levels'
       })
     }
     projectFilter(filters)

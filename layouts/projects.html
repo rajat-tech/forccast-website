@@ -30,6 +30,9 @@
                   {{ (' · ' + project.university_2) if project.university_2 }}
                   {{ (' · ' + project.university_3) if project.university_3 }}
                 </h5>
+                <div class="search-levels" style="display: none">
+                  {{ project.level}}
+                </div>
                 <p class="search-tags">
                   {{ project.theme_tags | replace('|', '·')}}
                 </p>
@@ -114,12 +117,20 @@
             </label>
           </div> -->
           {% endfor %}
+          <div class="levels-container">
+            <h4>{{__('levels')}}</h4>
+            {% for level in external.meta.levels %}
+            <button type="button" class="btn btn-default btn-xs filter-pills" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ level.label }}">{{ __(level.label) }}</button>
+            {% endfor %}
+          </div>
+
           <div class="institutions-container">
             <h4>{{__('institutions')}}</h4>
             {% for institution in external.meta.institutions %}
             <button type="button" class="btn btn-default btn-xs filter-pills" data-toggle="button" aria-pressed="false" autocomplete="off" value="{{ institution.label }}">{{ institution.label }}</button>
             {% endfor %}
           </div>
+
           {% if external.meta.tags|length %}
           <div class="tags-container">
             <h4>{{__('tags')}}</h4>
