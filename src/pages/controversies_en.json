@@ -3,6 +3,7 @@
   "meta": {
     "title": "controversies",
     "level": 0,
+    "sort": 2,
     "layout": "page.html",
     "collection": "pages",
     "customjs": "footnotes.js"
