@@ -25,7 +25,7 @@
                     </h4>
                     {% if event.hasDateTime %}
                     <p>
-                      {{ event.start | applyUtcOffset(1) | date("HH:mm") }} - {{ event.end | applyUtcOffset(1) | date("HH:mm") }}
+                      {{ event.start | applyUtcOffset(0) | date("HH:mm") }} - {{ event.end | applyUtcOffset(0) | date("HH:mm") }}
                     </p>
                     {%endif%}
                   </div>
