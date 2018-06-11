@@ -681,6 +681,8 @@ a {
 .event-info{
   flex-shrink: 1;
   flex-grow: 1;
+  max-width: 60%;
+  overflow: hidden;
 }
 
 .event-info a{
