@@ -242,7 +242,7 @@ a {
 .sidemenu-logo{
   padding-bottom: 27px;
   margin-top: 18px;
-  min-height: 165px;
+  /*min-height: 165px;*/
 }
 
 .sidemenu-logo p{
@@ -1498,4 +1498,10 @@ h2{
     display: none;
   }
 
+}
+
+.inline_sciencespo_logo{
+  display: inline;
+  max-height: 3em;
+  line-height: 1em;
 }

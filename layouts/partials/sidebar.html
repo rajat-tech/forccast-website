@@ -3,7 +3,10 @@
     <div class="sidemenu-logo">
      <h1><a href="{{ site.baseurl if locale === defaultLocale else site.baseurl+locale }}">{{ site.name }}</a></h1>
      <p>
-       Formation par la <br class="hidden-hd" />Cartographie des Controverses<br class="hidden-hd" /> à l'Analyse des Sciences <br/>et des Techniques
+        {{ __('baseline') }} <br /><a target="blank" href="http://www.sciencespo.fr/">
+          <img class="inline_sciencespo_logo" src="{{site.baseurl}}../media/sciencespo_logo.png"></img>
+        </a>
+       <!--Formation par la <br class="hidden-hd" />Cartographie des Controverses<br class="hidden-hd" /> à l'Analyse des Sciences <br/>et des Techniques-->
      </p>
    </div>
      {% include "partials/menu.html" %}
