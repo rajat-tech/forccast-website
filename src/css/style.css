@@ -659,6 +659,10 @@ a {
   text-decoration: none;
 }
 
+.news-content figcaption{
+  display: none;
+}
+
 .archive-news-btn-group{
   padding-bottom: 50px;
 }
