@@ -326,7 +326,8 @@ a {
   padding-top: 25px;
 }
 
-.fixed-rightbar p {
+.fixed-rightbar p,
+.fixed-rightbar figcaption {
     font-size: 16px;
     line-height: 18px;
     font-style: italic;
