@@ -659,7 +659,8 @@ a {
   text-decoration: none;
 }
 
-.news-content figcaption{
+.news-content figcaption,
+.news-content .legend{
   display: none;
 }
 
