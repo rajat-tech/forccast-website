@@ -9,6 +9,7 @@
 	"partners": "Partenaires",
 	"events": "Calendrier",
 	"team": "Équipe",
+	"during": "le",
 	"next": "page suivante",
 	"previous": "page précédente",
 	"prev": "page précédente",
@@ -41,5 +42,6 @@
 	"year": "year",
 	"external website": "Site web",
 	"download": "télécharger",
-	"baseline": "Un projet porté par"
+	"baseline": "Un projet porté par",
+	"on": "on"
 }

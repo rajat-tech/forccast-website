@@ -10,6 +10,7 @@
 	"events": "Calendar",
 	"team": "Team",
 	"next": "next",
+	"during": "on",
 	"previous": "previous",
 	"read more": "read more",
 	"higher": "higher education",
@@ -40,5 +41,6 @@
 	"year": "year",
 	"external website": "External website",
 	"download": "download",
-	"baseline": "A project lead by"
+	"baseline": "A project lead by",
+	"on": "on"
 }
