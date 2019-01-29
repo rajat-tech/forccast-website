@@ -665,6 +665,10 @@ a {
   display: none;
 }
 
+.news-content em{
+  word-wrap: break-word;
+}
+
 .archive-news-btn-group{
   padding-bottom: 50px;
 }
