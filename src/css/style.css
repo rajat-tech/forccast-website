@@ -660,11 +660,6 @@ a {
   text-decoration: none;
 }
 
-.news-content figcaption,
-.news-content .legend{
-  display: none;
-}
-
 .news-content em{
   word-wrap: break-word;
 }
