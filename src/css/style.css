@@ -1160,6 +1160,10 @@ h2{
   margin-bottom: 100px;
 }
 
+.news-content > figcaption {
+  display: none;
+}
+
 .home-container {
     display: flex;
 }
