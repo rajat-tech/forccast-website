@@ -70,6 +70,14 @@ env.addFilter('applyUtcOffset', function(input, offsetHours) {
   return date.toDate();
 });
 
+env.addFilter('utcToLocalTime', function(input) {
+  if (!input.length || !input) {
+    return input;
+  }
+  var date = moment(input);
+  return date.local().toDate();
+});
+
 env.addFilter('split', function(str, seperator) {
     return str.split(seperator);
 });

@@ -18,14 +18,14 @@
                 <div class="event-container flex">
                   <div class="event-date">
                     <h4>
-                      {{ event.start | applyUtcOffset(1) | date("DD MMM", locale) }}
+                      {{ event.start | utcToLocalTime() | date("DD MMM", locale) }}
                       {% if event.start | date("DD MMM", locale) != event.end | date("DD MMM", locale) %}
-                       - {{ event.end | applyUtcOffset(1) | date("DD MMM", locale)}}
+                       - {{ event.end | utcToLocalTime() | date("DD MMM", locale)}}
                       {%endif%}
                     </h4>
                     {% if event.hasDateTime %}
                     <p>
-                      {{ event.start | applyUtcOffset(1) | date("HH:mm") }} - {{ event.end | applyUtcOffset(1) | date("HH:mm") }}
+                      {{ event.start | utcToLocalTime() | date("HH:mm") }} - {{ event.end | utcToLocalTime() | date("HH:mm") }}
                     </p>
                     {%endif%}
                   </div>
