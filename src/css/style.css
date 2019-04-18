@@ -660,11 +660,6 @@ a {
   text-decoration: none;
 }
 
-.news-content figcaption,
-.news-content .legend{
-  display: none;
-}
-
 .news-content em{
   word-wrap: break-word;
 }
@@ -1163,6 +1158,10 @@ h2{
 .news-content{
   padding-top: 36px;
   margin-bottom: 100px;
+}
+
+.news-content > figcaption {
+  display: none;
 }
 
 .home-container {
