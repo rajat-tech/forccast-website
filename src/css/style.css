@@ -1312,6 +1312,29 @@ h2{
 
 }
 
+/* mobile */
+.visible-xs p:first-of-type{
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .resources-archive{
+    padding-top: 0;
+  }
+  .navbar-header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: stretch;
+  }
+
+  .navbar-brand{
+    flex: 1;
+  }
+
+  .sidemenu-1 > .nav > li > a{
+    padding: 9px 45px;
+  }
+
+}
 
 /* tablet horizontal */
 @media (min-width: 992px) {
