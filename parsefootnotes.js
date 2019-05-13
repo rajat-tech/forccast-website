@@ -50,15 +50,17 @@ function plugin(options){
         $('.footnotes').remove()
         var desktop = $.html()
         var mobile;
-        $ = cheerio.load(result.replace(/<\/sup>/g,'</sup></p><p>'))
+        // $ = cheerio.load(result.replace(/<\/sup>/g,'</sup></p><p>'))
+        $ = cheerio.load(result)
         $('iframe').addClass('news-desk embed-responsive-item')
         if($('.footnotes').html()){
           $('.footnotes-sep').remove()
           var list = $('.footnote-item')
+          list.remove();
           list.each(function(i, elem) {
             var id = $(this).attr('id');
             var title = $(this).find('h4').clone()
-            var collapser = $('<div class="show-note-button" data-toggle="collapse" data-target="#' + id +'" aria-expanded="false" aria-controls="' + id +'"></div>')
+            var collapser = $('<div id="fn-content-' + id + '" class="show-note-button" data-toggle="collapse" data-target="#' + id +'" aria-expanded="false" aria-controls="' + id +'"></div>')
             if(title.text()){
               title.wrap(collapser)
             }else{
@@ -67,14 +69,16 @@ function plugin(options){
 
             $(this).find('h4').remove()
             var collapsed = $('<div class="collapse show-note-content" id="' + id +'">' + $(this).html() +'</div>')
-            $('.footnote-ref a[href=#' + id +']').parent().parent().after(collapser)
-            collapser.after(collapsed)
-          });
-          $('.footnote-ref a').removeAttr('href')
-          $('.footnotes').remove()
-          $('.footnote-backref').remove()
+            // $('.footnote-ref a[href=#' + id +']').parent().parent().after(collapser)
+            // collapser.after(collapsed)
+            $('.footnotes').append(collapser);
+            $('.footnotes').append(collapsed);
+        });
+        //   $('.footnote-ref a').removeAttr('href')
+        //   $('.footnotes').remove()
+        //   $('.footnote-backref').remove()
           mobile = $.html()
-        }else {
+        } else {
           mobile = desktop;
         }
 
